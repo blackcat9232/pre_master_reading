@@ -1,0 +1,1246 @@
+# Review Article
+
+# A review of metasurfaces: physics and applications
+
+# Hou-Tong Chen $^{1}$ , Antoinette J Taylor $^{2}$ and Nanfang Yu $^{3}$
+
+$^{1}$ Center for Integrated Nanotechnologies, Los Alamos National Laboratory, Los Alamos, NM 87545, USA  
+$^{2}$ Associate Directorate for Chemistry, Life, and Earth Sciences, Los Alamos National Laboratory, Los Alamos, NM 87545, USA  
+$^{3}$ Department of Applied Physics and Applied Mathematics, Columbia University, New York, NY 10027, USA
+
+E-mail: chenht@lanl.gov, ttaylor@lanl.gov, ny2214@columbia.edu
+
+26 May 2016
+
+Abstract. Metamaterials are composed of periodic subwavelength metal/dielectric structures that resonantly couple to the electric and/or magnetic components of the incident electromagnetic fields, exhibiting properties that are not found in nature. This class of micro- and nano-structured artificial media have attracted great interest during the past 15 years and yielded ground-breaking electromagnetic and photonic phenomena. However, the high losses and strong dispersion associated with the resonant responses and the use of metallic structures, as well as the difficulty in fabricating the micro- and nanoscale 3D structures, have hindered practical applications of metamaterials. Planar metamaterials with subwavelength thickness, or metasurfaces, consisting of single-layer or few-layer stacks of planar structures, can be readily fabricated using lithography and nanoprinting methods, and the ultrathin thickness in the wave propagation direction can greatly suppress the undesirable losses. Metasurfaces enable a spatially varying optical response (e.g., scattering amplitude, phase, and polarization), mold optical wavefronts into shapes that can be designed at will, and facilitate the integration of functional materials to accomplish active control and greatly enhanced nonlinear response. This paper reviews recent progress in the physics of metasurfaces operating at wavelengths ranging from microwave to visible. We provide an overview of key metasurface concepts such as anomalous reflection and refraction, and introduce metasurfaces based on the Pancharatnam-Berry phase and Huygens' metasurfaces, as well as their use in wavefront shaping and beam forming applications, followed by a discussion of polarization conversion in few-layer metasurfaces and their related properties. An overview of dielectric metasurfaces reveals their ability to realize unique functionalities coupled with Mie resonances and their low ohmic losses. We also describe metasurfaces for wave guidance and radiation control, as well as active and nonlinear metasurfaces. Finally, we conclude by providing our opinions of opportunities and challenges in this rapidly developing research field.
+
+# Contents
+
+1 Introduction 3
+
+2 Anomalous reflection and refraction 4
+
+2.1 Generalized laws of reflection and refraction ..... 4  
+2.2 Demonstration of generalized optical laws ..... 5
+
+3 Arbitrary phase gradient and beam forming 6
+
+3.1 Metasurfaces based on Pancharatnam-Berry phase ..... 6  
+3.2 Huygens' surfaces ..... 9  
+3.3 Wavefront shaping and beam forming 9
+
+4 Polarization conversion 12
+
+4.1 Linear-to-circular polarization conversion 13  
+4.2 Linear polarization rotation 15  
+4.3 Asymmetric transmission 17
+
+5 Dielectric metasurfaces 18
+
+5.1 Dielectric resonators 18  
+5.2 Directional scattering 19  
+5.3 Beam forming and wavefront control enabled by dielectric metasurfaces 21
+
+6 Metasurfaces for wave guidance and radiation 22
+
+6.1 Coupling between free space and surface waves 23  
+6.2 Control of surface waves 26
+
+7 Active metasurfaces 27
+
+7.1 Actively switchable and frequency tunable metal/semiconductor hybrid metasurfaces 28  
+7.2 Graphene hybrid metasurfaces 30  
+7.3 Other resonance switchable and frequency tunable metasurfaces . . . 32  
+7.4 Nonlinear metasurfaces ..... 33
+
+8 Summary and outlook 35
+
+# 1. Introduction
+
+Optical devices control and manipulate light by altering its amplitude, phase, and polarization states in a desired manner, which result in steering the beam propagation direction, shaping the wavefront (e.g., focusing), and imparting information for applications such as sensing, imaging and communication. Conventional optical components are based on refraction, reflection, absorption, and/or diffraction of light, and light manipulation is achieved via propagation through media of given refractive indices, which can be engineered to control the optical path of light beams. In this way, phase, amplitude, and polarization changes are accumulated through propagation in optical components based on refraction and reflection, such as lenses, waveplates, and optical modulators. Ancient people already used ice lenses to focus sunlight and start fires [1], one example of controlling light propagation. They still prevail in today's optical laboratories and many consumer-based optical products, but are bulky and heavy, unsuitable for the increasingly demanding requirements of integration and miniaturization in modern electromagnetic and photonic systems. The propagation effect is also used in transformation optics [2,3], which utilizes optical materials structured on a subwavelength scale to produce spatially varying refractive indices that can range from positive to negative.
+
+Metamaterials are composed of periodic subwavelength metal/dielectric structures (i.e., meta-atoms) that resonantly couple to the electric or magnetic or both components of the incident electromagnetic fields, exhibiting effective electric (represented by electric permittivity $\epsilon$ ) and/or magnetic (represented by magnetic permeability $\mu$ ) response not found in nature. This class of micro- and nano-structured artificial media have attracted great interest during the past 15 years and yielded ground-breaking electromagnetic and photonic phenomena [4,5]. Their electromagnetic properties are mainly determined by the subwavelength structures together with the integrated functional materials, therefore, producing the desirable electromagnetic response and device functionalities by structural engineering. The initial overwhelming interest in metamaterials lies in the realization of simultaneously negative electric and magnetic responses and, thereby, negative refractive index [6,7], which can be used to accomplish superresolution in optical imaging [8,9]. The capability of tailoring inhomogeneous and anisotropic refractive index resulted in electromagnetic invisibility [10], another hallmark accomplishment using metamaterials. These promising potential applications are, however, hindered in practice due to the high losses and strong dispersion associated with the resonant responses and the use of metallic structures.
+
+Another challenge in metamaterials is the difficult micro- and nano-fabrication of the required three-dimensional (3D) structures $[11]$ , as permittivity, permeability and refractive index are essentially properties of bulk materials. Planar metamaterials, however, can be readily fabricated using existing technologies such as lithography and nanoprinting methods, driving many metamaterial researchers to focus on single-layer or few-layer stacks of planar structures that are more accessible particularly in the optical regime. They are called metasurfaces and can be considered as the two-dimensional (2D) equivalent of bulk metamaterials. Because the subwavelength thickness introduces minimal propagation phase, the effective permittivity, permeability and refractive index are of less interest in metasurfaces. In contrast, of significant importance are the surface or interface reflection and transmission resulting from the tailored surface impedance, including their amplitude, phase, and polarization states. The ultrathin thickness in the wave propagation direction can greatly suppress the undesirable losses by using appropriately chosen materials and metasurface structures. Overall, metasurfaces can overcome the challenges encountered in bulk metamaterials while their interactions with the incident waves can be still sufficiently strong to obtain very useful functionalities. For this reason, we envision that metasurfaces will dominate the general field of metamaterials research given their high potential in applications.
+
+Metasurfaces diminish our dependence on the propagation effect by introducing abrupt changes in optical properties $[12–14]$ . At microwave and terahertz (THz) frequencies, one can take advantage of subwavelength metallic resonators such as split-ring resonators (SRRs) $[15, 16]$ and a variety of elements typically used in frequency selective surfaces $[17]$ . Abrupt and controllable changes of optical properties are achieved by engineering the interaction between light and an array of optical scatterers called “optical antennas” $[18, 19]$ , which can take a variety of forms, including metallic or dielectric micro/nanoparticles $[20, 21]$ , apertures formed in metallic films $[22, 23]$ , and their multi-layer structures $[24]$ . The most critical feature of metasurfaces is that they provide degrees of freedom in designing spatial inhomogeneity over an optically thin interface. Arrays of antennas with subwavelength separation between adjacent elements can have spatially varying structural features or material compositions. Thus, metasurfaces are able to introduce a spatially varying electromagnetic or optical response (i.e., scattering amplitude, phase, and polarization), and mold wavefronts into shapes that can be designed at will.
+
+As metasurfaces comprise a rapidly growing field
+
+of research, there have been a few good review articles focusing on different areas $[25–31]$ . Here we provide our perspective on this research field by reviewing the progress during the past few years, where metasurfaces are broadly defined as planar metamaterial structures with subwavelength thickness, operating at wavelengths ranging from microwave to visible. The paper is organized as described below. In section 2 we overview the concept and provide demonstrations of anomalous reflection and refraction, which have largely stimulated and reformed worldwide research interest in metasurfaces. In section 3 we introduce metasurfaces based on the Pancharatnam-Berry phase and Huygens' metasurfaces, as well as their use in wavefront shaping and beam forming applications. In section 4 we review polarization conversion in few-layer metasurfaces and their related properties. This section is followed by an overview in section 5 of dielectric metasurfaces that not only reduce the ohmic losses in metallic metasurfaces but also realize some other unique properties and functionalities. In section 6 we describe metasurfaces for wave guidance and radiation control. We also summarize active and nonlinear metasurfaces in section 7, and in the last section we provide concluding remarks and an outlook on future research directions.
+
+# 2. Anomalous reflection and refraction
+
+# 2.1. Generalized laws of reflection and refraction
+
+When a plane electromagnetic wave encounters a boundary between two homogeneous media with different refractive indices, it is split into a reflected beam that propagates back to the first medium and a transmitted beam that proceeds into the second medium. The reflection and transmission coefficients and their directions are determined by the continuity of field components at the boundary, and are given by the Fresnel equations and Snell's law, respectively. If we add to the interface an array of subwavelength resonators of negligible thickness forming a metasurface, the reflection and transmission coefficients will be then dramatically changed because the boundary conditions are modified by the resonant excitation of an effective current within the metasurface. The reflection and transmission waves carry a phase change that can vary from $-\pi$ to $\pi$ , depending on the wavelength of the incident wave relative to the metasurface resonance. When the resonators are anisotropic, the polarization state may be also altered. When the phase change is uniform along the interface, the directions of reflection and refraction are unaltered; in contrast, one of the merits provided by metasurfaces is that we can create spatial phase variation with subwavelength resolution.
+
+to effectively control the direction of wave propagation and the shape of wavefront.
+
+![](images/631f52099eca5d654fba66f69003f20814795d7de52cd5c30ca6207cf6e77069.jpg)
+
+<details>
+<summary>text_image</summary>
+
+Incidence
+Plane of
+incidence
+Anomalous
+reflection
+θi
+φr
+θr
+n_i
+Metasurface
+θt
+φt
+n_t
+dΦ/dx
+dΦ/dy
+dΦ/dr
+x
+z
+y
+Anomalous
+refraction
+</details>
+
+Figure 1. A gradient of interfacial phase jump $d\Phi/dr$ provides an effective wavevector along the interface that can bend transmitted and reflected light into arbitrary directions.
+
+We can understand quantitatively the control of wave propagation direction using Fermat's principle, which states that the route for the propagation of a light beam should be stationary in the total accumulated phase with respect to small variations of the route. Now we consider a specific case where a metasurface introduces a spatial distribution of phase jumps due to electromagnetic scattering at its constitutive antennas. The actual optical path in the presence of these phase jumps should be stationary in the total accumulated optical phase. This law of stationary phase ensures that wavelets starting from a source point with the same initial phase will arrive at the point of destination in phase after reflecting from or transmitting through the metasurface, and thus constructively interfere, which makes the route a physical path of optical power. A set of generalized laws of refraction and reflection can be derived from Fermat's principle of stationary phase $[12,13,32]$ :
+
+$$
+\left\{ \begin{array}{l} n _ {\mathrm{t}} \sin (\theta_ {\mathrm{t}}) - n _ {\mathrm{i}} \sin (\theta_ {\mathrm{i}}) = \frac {1}{k _ {0}} \frac {\mathrm{d} \Phi}{\mathrm{d} x} \\ \cos (\theta_ {\mathrm{t}}) \sin (\varphi_ {\mathrm{t}}) = \frac {1}{n _ {\mathrm{t}} k _ {0}} \frac {\mathrm{d} \Phi}{\mathrm{d} y} \end{array} \right. \tag {1}
+$$
+
+$$
+\left\{ \begin{array}{l} \sin (\theta_ {\mathrm{r}}) - \sin (\theta_ {\mathrm{i}}) = \frac {1}{n _ {\mathrm{i}} k _ {0}} \frac {\mathrm{d} \Phi}{\mathrm{d} x} \\ \cos (\theta_ {\mathrm{r}}) \sin (\varphi_ {\mathrm{r}}) = \frac {1}{n _ {\mathrm{r}} k _ {0}} \frac {\mathrm{d} \Phi}{\mathrm{d} y} \end{array} \right. \tag {2}
+$$
+
+where the definition of angles is shown in figure 1, and $d\Phi/dx$ and $d\Phi/dy$ are, respectively, the components of the phase gradient parallel and perpendicular to the plane of incidence. Looking at the problem from an alternative point of view, the interfacial phase gradient
+
+functions as an effective wavevector along the interface, and is imparted to the transmitted and reflected waves. The above generalized laws can thus be derived by considering the conservation of wavevector along the interface. These generalized laws indicate that the transmitted and reflected light beams can be bent in arbitrary directions in their respective half space, depending on the direction and magnitude of the interfacial phase gradient, as well as the refractive indices of the surrounding media.
+
+# 2.2. Demonstration of generalized optical laws
+
+To experimentally demonstrate the generalized laws, one has to devise miniature scatterers that are able to controllably change the phase of the scattered waves and to place such scatterers into an array, forming an artificial interface. The scattering amplitudes should be the same for all scatterers and the spacing between neighboring scatterers in the array should be much less than the wavelength. These conditions ensure that the superposition of spherical waves emanating from the scatterers gives rise to refracted and reflected waves with planar wavefronts, following Huygens' principle.
+
+One approach to design the phase response of scatterers is to use antenna dispersion. That is, for a fixed electromagnetic wavelength and a variation of antenna geometries, or for a fixed antenna geometry and a variation of excitation wavelengths, there is an associated phase variation of the waves scattered from the antenna (there are also associated amplitude and polarization changes that can be utilized or otherwise managed for designing metasurfaces). For example, when a beam of light impinges on a metallic optical antenna, the optical energy is coupled into surface electromagnetic waves propagating back and forth along the antenna surface. These are accompanied by charge oscillations inside the antenna. These coupled surface electromagnetic waves and oscillating charges are known as surface plasmons. For a fixed excitation wavelength, the antenna resonance occurs when the antenna length $L_{\mathrm{res}} \approx \lambda / 2$ , where $\lambda$ is the surface plasmon wavelength; under this condition the incident electromagnetic wave is in phase with the excited antenna current. When the antenna length is smaller or larger than $L_{\mathrm{res}}$ , the current leads or lags the driving field. Therefore, the phase of the antenna current and the phase of electromagnetic waves created by the oscillating current (i.e., scattered waves from the antenna) can be controlled by choosing the appropriate antenna length. The tuning range of phase is up to $\pi$ if a single antenna resonance is involved. Multiple independent resonances, coupled antenna resonances, or geometric effects (see discussion of the Pancharatnam-Berry phase in section 3.1) are able to extend the phase response to cover the entire
+
+2π range, which is necessary for complete control of the wavefront. In addition to metallic antennas, dielectric ones are also able to introduce phase variations to the scattered light associated with Mie resonances (i.e., establishment of standing wave patterns in the dielectric antennas, see the discussion of dielectric metasurfaces in section 5).
+
+Generalized optical laws were first demonstrated using V-shaped optical antennas in the mid-infrared spectral range $[12]$ and later confirmed in the near-infrared $[13]$ (see figure 2). Such optically anisotropic antennas support two plasmonic eigenmodes with different resonant properties. The geometry and orientation of antennas in the array are properly chosen so that for an incident wave at around $8 \mu m$ wavelength, over a wide range of incident angles, and polarized along the x-axis (see figure 2(a)), the component of the scattered wave polarized along the y-axis has an incremental phase of $\pi/4$ between adjacent V-antennas in the unit cell of the metasurface. The amplitude of the component polarized along the y-axis is also tuned to be uniform across the antenna array. The antenna spacing is between one tenth and one fifth of the free space wavelength. The metasurface creates anomalously refracted and reflected beams satisfying the generalized laws over a wide wavelength range, with negligible spurious beams and optical background, as shown in figure 2(b) and (d). The broadband performance is due to the fact that the two eigenmodes supported by the V-antennas form a broad effective resonance over which the scattering efficiency is nearly constant and the phase response is approximately linear $[33, 34]$ . The scalability of metasurfaces allows the extension of this concept to other frequency ranges, e.g., broadband anomalous refraction was also demonstrated at THz frequencies using C-shaped metallic resonators $[35]$ .
+
+The generalized law of reflection has also been demonstrated using reflect-arrays $[14, 36, 37]$ , which consist of metallic antennas separated from a back metallic plane by a thin layer of dielectric material (see figure 3). Such reflect-array metasurfaces are inspired by initial work on microwave and millimeter wave reflect-array antennas $[38, 39]$ . Figure 3(a) shows a near-infrared reflect-array metasurface based on patch antennas and figure 3(c) shows one that is based on H-shaped antennas for microwaves. The essence of reflect-arrays is to use antennas coupled with their dipolar images in the back mirror to achieve a phase coverage of $2\pi$ . Ideally, all incident power will be coupled into anomalous reflection, which will have the same polarization as that of the incident light; the transmission and specular reflection will be absent. Experimentally demonstrated efficiency in generating anomalous reflection in reflect-array metasurface is as
+
+![](images/2bed717ae218f7d8143a0629821987e33b0ef69640ac6f7f0315d5e21f9bf18c.jpg)  
+Figure 2. (a) SEM image of a mid-infrared metasurface consisting of an array of V-shaped gold optical antennas patterned on a silicon wafer, with the unit cell highlighted and $\Gamma = 11 \mu m$ . It creates a constant gradient of phase jump along the metasurface for the control of the propagation direction of light transmitted through or reflected from the metasurface. (b) Under normal incidence, measured far-field intensity profiles show the ordinary (co-polarized) and anomalous (cross-polarized) refraction generated by metasurfaces like the one shown in (a) and with different interfacial phase gradients (from $2\pi/13-\mu m$ to $2\pi/17-\mu m$ ). The far-field profiles are normalized with respect to the intensity of the ordinary beams located at $\theta_{t} = 0^{\circ}$ . The arrows indicate the calculated angular positions of the anomalous refraction according to $\theta_{t} = -\arcsin(\lambda/\Gamma)$ . (c) A metasurface used to demonstrate generalized laws of reflection and refraction in the near-infrared. Upper panel depicts one unit cell of the fabricated structure and lower panel reveals a schematic of the metasurface. (d) Measured far-field intensity profiles of the metasurface in (c) showing reflection angle $\theta_{r}$ versus wavelength for cross-polarized light with $65^{\circ}$ incidence angle. (a) used with permission from [12], (b) used with permission from [33], (c) and (d) reproduced with permission from [13].
+
+high as 80%, significantly higher than the initial proof-of-principle demonstrations in figure 2, which are based on a single antenna layer, rely on polarization rotation to achieve the $2\pi$ phase coverage, and have an efficiency of 10-20%.
+
+Figure 3(b) shows three regimes of operation for a reflect-array metasurface: negative angle of reflection ( $\theta_{r}$ and $\theta_{i}$ of different signs), angle of incidence and angle of reflection of the same sign but not equal to each other, and coupling of incident light into evanescent waves propagating on the metasurface ( $\theta_{r}$ beyond $90^{\circ}$ ). In the last case, the interaction between the incident light and the metasurface leads to a lateral wavevector that is larger than the free space wavevector; as a result, no reflection exists and the incident optical power can only be coupled into surface waves. The work shown in figure 3(c) and (d) confirms the existence of such surface waves by experimentally measuring their near-field characteristics. A number of variations of the reflect-array metasurface have
+
+been also demonstrated. For example, birefringent reflect-array metasurfaces that steer incident light into different directions according to its polarization state have been demonstrated in simulations $[37]$ (see figure 3(e) and (f)).
+
+# 3. Arbitrary phase gradient and beam forming
+
+# 3.1. Metasurfaces based on Pancharatnam-Berry phase
+
+In the previous examples, variations in phase or amplitude response are introduced by the dispersion of antenna resonance. A completely different approach to introducing phase jumps is to use the so-called Pancharatnam-Berry phase $[40, 41]$ . The latter is associated with polarization change and can be created by using anisotropic, subwavelength scatterers with identical geometric parameters but spatially varying orientations. The recent development of
+
+![](images/29b8fb6aec85ad98bd9270c78092ddecda59c0c3515f3eff4ff46cdf15e378a4.jpg)  
+Figure 3. (a) Schematic of a near-infrared reflect-array metasurface consisting of gold patch antennas separated from a gold back plane by a $MgF_{2}$ spacer with subwavelength thickness. Left inset shows a basic building block, and right inset is an SEM image of part of the metasurface. (b) Anomalous reflections at different incident angles for the metasurface shown in (a). The shaded quadrant indicates “negative” reflection. (c) Photograph of a fabricated microwave reflect-array consisting of H-antennas separated from a metallic back plane by a dielectric spacer. The reflect-array introduces an interfacial phase gradient $\xi = 1.14k_{0}$ , where $k_{0}$ is the wavevector of the incident beam corresponding to a wavelength of 2 cm. (d) Scattering phase profile from the metasurface in (c) showing the phase gradient along the x-direction. (e) Schematic of part of a birefringent reflect-array metasurface working at $\lambda = 8.06 \mu m$ . (f) Depending on the polarization of the incident light, the phase gradient is either positive or negative along the x-direction for the metasurface in (e), leading to polarization-dependent anomalous reflection. (a) and (b) reproduced with permission from [36], (c) and (d) used with permission from [14], (e) and (f) used with permission from [37].
+
+metasurfaces based on Pancharatnam-Berry phase has been largely following the innovative early works by Hasman and co-workers [42], who used continuous or discrete subwavelength gratings to control the polarization states for the generation of vector beams and manipulation of wavefronts. The easiest way to reveal the relation between polarization and phase is to use Jones calculus [43, 44]. In general, the Jones matrix of an anisotropic scatterer can be written as
+
+$$
+\hat {M} = \hat {R} (- \alpha) \left( \begin{array}{c c} t _ {\mathrm{o}} & 0 \\ 0 & t _ {\mathrm{e}} \end{array} \right) \hat {R} (\alpha), \tag {3}
+$$
+
+where $t_{o}$ and $t_{e}$ are, respectively, the coefficients of forward scattering for incident light linearly polarized along the two principal axes of the anisotropic
+
+scatterer,
+
+$$
+\hat {R} (\alpha) = \left( \begin{array}{c c} \cos (\alpha) & \sin (\alpha) \\ - \sin (\alpha) & \cos (\alpha) \end{array} \right) \tag {4}
+$$
+
+is the rotation matrix and $\alpha$ is the rotation angle. Given an incident wave of right/left circular polarization $E_{I}^{R/L}$ , the scattered light from the anisotropic scatterer in the forward direction $E_{T}^{R/L}$ can then be written as [45]:
+
+$$
+\begin{array}{l} \mathbf {E} _ {\mathrm{T}} ^ {\mathrm{R/L}} = \hat {M} \cdot \mathbf {E} _ {\mathrm{I}} ^ {\mathrm{R/L}} \\ = \frac {t _ {\mathrm{o}} + t _ {\mathrm{e}}}{2} \mathbf {E} _ {\mathrm{I}} ^ {\mathrm{R/L}} + \frac {t _ {\mathrm{o}} - t _ {\mathrm{e}}}{2} \exp (i m 2 \alpha) \mathbf {E} _ {\mathrm{I}} ^ {\mathrm{L/R}}. \tag {5} \\ \end{array}
+$$
+
+The first term represents circularly polarized scattered waves with the same handedness as the incident
+
+![](images/e60d9034aca05ee745b6e676271e5328ddbcd4020b2dc41119f95ca8ba8842e0.jpg)  
+Figure 4. (a) Upper panel: schematic of the super-unit-cell of a metasurface consisting of an array of identical U-shaped apertures with gradually increasing rotation angles. Lower panels: simulation results showing that the metasurface in (a) bends a circularly polarized incident beam under normal incidence into left or right direction according to the handedness of the incident beam. (b) Upper panel: super-unit-cell of a planar cylindrical lens consisting of an array of identical U-apertures with different orientations. Lower panels: schematics and simulation results showing that the lens focuses right-handed circularly polarized transmission component when the incident light is left-handed circularly polarized, and that the same lens defocuses left-handed circularly polarized transmission component when the incident light is right-handed circularly polarized. (c) SEM image of a metasurface consisting of an array of gold rod antennas with identical geometry but spatially varying orientations, which is designed for generating an optical vortex beam with L = 1 (incidence: right-handed circularly polarized; detection: left-handed circularly polarized). (d) Measured intensity distribution of vortex beams generated by the metasurface in (c) at different wavelengths from 670 to 1100 nm. (e) Pioncaré sphere used to derive the phase difference between scattered waves of left-handed circular polarization from rod antennas located at points A and B in (c), with right-handed circularly polarized incident light. (a) and (b) reproduced with permission from [45], (c) and (d) reproduced with permission from [46].
+
+light, and the second term represents circularly polarized scattered waves with opposite handedness and an additional Pancharatnam-Berry phase of $m2\alpha$ , where m is ‘−’ for right-handed and ‘+’ for left-handed circularly polarized incident light. The second component can be selected in experiments by using a quarter-wave plate and a polarizer. Its phase can cover the entire $2\pi$ range if the anisotropic scatterer is rotated from 0 to $180^{\circ}$ . Based on this principle, a phase-gradient metasurface has been demonstrated to steer light into different directions depending on the handedness of the incident circular polarization (see figure 4(a)) [45]. The unit cell of the metasurface consists of U-shaped aperture antennas with an incremental angle of rotation between adjacent elements, with the total rotation angle being $180^{\circ}$ within the unit cell. Similar U-shaped aperture antennas have been used to create a planar lens, which either functions as a focusing or diverging lens depending on the handedness of the incident circular polarization [45], as shown in
+
+figure 4(b). A broadband phase plate generating optical vortex beams has been demonstrated by using an array of rod antennas with different orientations (figure 4(c) and (d)) [46]. A bi-layer metallic aperture metasurface was also demonstrated to accomplish the simultaneous manipulation of polarization and phase of the transmitted light [47].
+
+The metasurfaces based on the Pancharatnam-Berry phase work for circularly polarized incident light and control the component of the circularly polarized transmission with the opposite handedness. A major advantage of the approach based on the Pancharatnam-Berry phase is ultra-broadband performance: given a certain antenna geometry, the magnitude of the phase jump is only a function of the orientation angle of the antenna and the sign of the phase jump is determined by the handedness of the incident circularly polarized light; there is no wavefront distortion resulting from antenna dispersion. The operating bandwidth is limited on the long-wavelength side by reduced scattering efficiency and
+
+on the short-wavelength side by the requirement that the wavelength has to be at least several times larger than the spacing between scatterers (i.e., metasurface regime). In early demonstrations of broadband metasurfaces based on Pancharatnam-Berry phase, the presence of scattered waves that do not carry Pancharatnam-Berry phase inevitably decreases their efficiency. In a new generation of metasurfaces, Luo et al. were able to suppress these scattered components and created metasurfaces based on Pancharatnam-Berry phase with efficiency approaching unity [48]. They demonstrated two different metasurfaces that separate a linearly polarized incident microwave into a left-handed circularly polarized beam and a right-handed circularly polarized beam over a frequency range of 11–14 GHz, within which the linearly polarized background is very weak. The metasurface design is based on rigorous Jones matrix analyses that provide a set of criteria for achieving 100% efficiency [48].
+
+A completely different perspective to understand the operation of metasurfaces based on the Pancharatnam-Berry phase results from tracing the evolution of polarization in the Poincaré sphere $[40,49–51]$ . The phase difference between the scattered waves from any two points on the metasurface is equal to the solid angle enclosed by their corresponding traces in the Poincaré sphere divided by two $[49]$ . For example, the solid red trace in figure 4(e) corresponds to light passing through point A in figure 4(c): The trace starts at north pole of the Poincaré sphere representing right-handed circularly polarized incident light; the trace passes a point on the equator that represents linear polarization in the vertical direction because the antenna at point A on the metasurface preferentially scatters vertically polarized waves; the trace ends at the south pole because left-handed circularly polarized transmission is selectively monitored. Similarly, the dashed red trace in figure 4(e) corresponds to light passing through point B on the metasurface shown in figure 4(c). The solid angle enclosed by the two traces is $\pi$ ; therefore the phase difference between left-handed circularly polarized light scattering from points A and B on the metasurface is $\pi/2$ . Similar analyses show that the phase difference between points A and C is $\pi$ and between A and D is $3\pi/2$ . Therefore, the metasurface in figure 4(c) introduces a constant phase gradient in the azimuthal direction and the phase variation is $2\pi$ during one circle around the central point of the metasurface. The metasurface thus imprints a spiral phase distribution to the transmitted wavefront, creating a vortex beam with orbital angular momentum of L = 1.
+
+# 3.2. Huygens' surfaces
+
+To boost the efficiency of a metasurface in controlling the transmitted light, one has to match its impedance with that of free space. Complete elimination of reflection can be realized by controlling the surface electric and magnetic polarizabilities, $\alpha_{e}$ and $\alpha_{m}$ , of the metasurfaces so that [52]
+
+$$
+\sqrt {\alpha_ {\mathrm{m}} / \alpha_ {\mathrm{e}}} = \eta_ {0}, \tag {6}
+$$
+
+where $\eta_{0}$ is the impedance of the surrounding media. The effective electric and magnetic surface currents, which are proportional to $\alpha_{e}$ and $\alpha_{m}$ , respectively, change the boundary conditions at the metasurface and lead to the new scattered wavefronts. The complex transmission coefficient of the metasurface is [52]
+
+$$
+T = \frac {2 - j \omega \alpha_ {\mathrm{e}} \eta_ {0}}{2 + j \omega \alpha_ {\mathrm{e}} \eta_ {0}}. \tag {7}
+$$
+
+If $\alpha_{e}$ is predominantly real, one can vary $\alpha_{e}$ and $\alpha_{m}$ simultaneously at each point on the metasurface to ensure that the waves transmitted through the metasurface acquire a phase jump anywhere from $-\pi$ to $+\pi$ according to (7) and that the transmission efficiency is close to unity by satisfying (6) everywhere on the metasurface. The above design concept has been implemented in the microwave spectral region by using spatially varying copper traces supporting both electric and magnetic polarization currents (figure 5(a)) [52]. A transmission efficiency of 86% was experimentally demonstrated in a beam deflector shown in figure 5(b). Although the demonstrations are in the microwave regime, the concepts can be adapted to the optical regime and one example is shown in figure 5(c) and (d) [53]. Another metasurface that is impedance matched to free space and able to fully control the phase of the transmitted light was proposed in a recent paper [54]. It is designed based on optical nanocircuit concepts and is comprised of three planarized arrays stacked together, as shown in figure 5(e), where the building blocks of the array are subwavelength components made of metallic and dielectric materials with different filling ratios and function as LC nanocircuit elements. A beam deflector and a flat lens with high transmission efficiency were demonstrated in simulations, as shown in figure 5(f) and (g), by engineering the effective surface impedance of the metasurface via tuning of the filling ratios.
+
+# 3.3. Wavefront shaping and beam forming
+
+Metasurfaces provide us with an unprecedented opportunity to design the wavefronts of light at will, as we have seen from the descriptions of anomalous reflection/refraction and beam focusing in the previous sections. Figure 6 further shows a few planar devices
+
+![](images/ef3ad15e56909f6d97cd63c2b4194add174c0f6797163e71d358a98aa68f676e.jpg)  
+Figure 5. (a) Upper panel: photograph of a fabricated microwave metasurface that can redirect an incident beam with nearly 100% efficiency into a refracted beam. It is made of a stack of identical circuit board stripes, the top and bottom sides of which are printed with copper traces. Bottom panel: one unit cell of the metasurface consists of capacitively and inductively loaded traces to realize desired electric sheet reactance (on the top side of each stripe) and capacitively loaded loops to realize desired magnetic sheet reactance (on the bottom side of each stripe). (b) Measured magnetic field distribution of the beam-deflecting metasurface in (a). (c) Schematic of an optically thin, isotropic Huygens' metasurface that efficiently refracts a normally incident beam at telecommunication wavelengths. Inset: schematic of a unit cell. (d) Simulated electric field distribution of a beam deflector based on the metasurface in (c).(e) Left panel: basic building block of a metasurface made of plasmonic (AZO: aluminum-doped zinc oxide) and dielectric (silicon) materials, with l = 250 nm and h = 250 nm. Right panel: metatransmit-array made of three stacked metasurfaces with center-center distance of $d = \lambda_{0}/8 = 375$ nm. (f) and (g) Simulated electric field distributions of a beam deflector and a flat lens based on the metatransmit-array shown in (e). (a) and (b) reproduced with permission from [52], (c) and (d) reproduced with permission from [53], (e)–(g) used with permission from [54].
+
+based on metasurfaces. To realize flat lenses, a metasurface should impose a phase profile
+
+$$
+\varphi_ {\mathrm{L}} (x, y) = \frac {2 \pi}{\lambda} \left(\sqrt {x ^ {2} + y ^ {2} + f ^ {2}} - f\right) \tag {8}
+$$
+
+to convert incident planar wavefronts into spherical ones, which converge at a distance $f$ from the lenses. The optical wavefronts in transmission or reflection remain spherical as long as the incident plane wave impinges normal to the flat lenses. It is therefore straightforward to achieve high numerical-aperture (NA) focusing without spherical aberration. Flat lenses at telecom wavelengths have been experimentally demonstrated using V-shaped antennas (see figure 6(a) and (b)) [55]. The efficiency of these flat lenses is, however, rather small (i.e., $1\%$ of the incident optical power is focused) because of the use of only a single scatterer layer, the small surface filling factor, and focusing only the component of the scattered light that is cross-polarized with respect to the incident polarization. At THz and microwave frequencies, high-performance planar components can benefit from few-layer metasurfaces, which have enabled highly efficient and ultrabroadband polarization conversion and anomalous refraction [56], and highly efficient reflect-array metasurface lenses [57]. V-shaped apertures allow similar control of scattering polarization, amplitude and phase as in their complementary V-antennas according to Babinet's principle; they have been used to demonstrate flat lenses to focus visible light (figure 6(c) and (d)) [58] and THz waves [59], with one of the advantages being significant suppression of the background light.
+
+Based on the Pancharatnam-Berry phase, U-shaped and other nano aperture antennas have been used to create a planar lens, which either functions as a focusing or diverging lens depending on the handedness of the incident circular polarization (see figure 4(b)) [45, 61]. A flat lens design at telecom wavelengths with potentially high efficiency has been demonstrated in simulations (figure 6(e) and (f)) [60]. The design uses concentric loop antennas placed on both sides of a substrate to enhance scattering efficiency and to increase the range of phase coverage. Flat lenses working in the near-infrared with high efficiency have been demonstrated experimentally by using reflect-arrays of patch antennas [62]. Note that except for spherical aberration, monochromatic aberrations are still present in the above demonstrated flat lenses. For example, when incident light is not perpendicular to the lenses, the transmitted or reflected wavefront is no longer spherical because its phase distribution is that of (8) plus a linear phase distribution introduced by the non-normal
+
+![](images/31e503e75f9057e6995840870729b22d741484290bc78898dea1628da323ea33.jpg)  
+Figure 6. (a) Left panel: SEM image of a fabricated metasurface lens with 3 cm focal length, consisting of an array of V-antennas. Right panel: phase profile of the lens discretized according to the phase responses of eight constituent antennas. Insets: zoom-in view of fabricated antennas. (b) 3D plots of the simulated (top panel) and measured (middle panel) and 1D plots (cross-sectional planes along the lines) of intensity distribution of the lens in (a) on the focal plane. (c) SEM image of a planar plasmonic metalens consisting of V-shaped apertures and with a focal length $f = 2.5 \mu m$ at an operational wavelength of 676 nm. (d) Intensity distributions for two cross-sectional planes (top panel) cutting through the center of the metalens in (c), and on the focal plane of the metalens (bottom panel). (e) Schematic of a metasurface lens consisting of an array of $21 \times 21$ scatterers each made of two silver concentric loops (gray). The scatterers are placed on both sides of the substrate (yellow). (f) Simulated intensity distribution on the focal plane of the metasurface lens in (e). (a) and (b) used with permission from [55], (c) and (d) used with permission from [58], and (e) and (f) used with permission from [60].
+
+incidence angle. Flat lenses also have chromatic aberration, although one can design antennas with multiple resonances to eliminate it by engineering their dispersion [63] (see discussions in section 5).
+
+It is of particular interest to focus Gaussian beams to non-diffracting and long focal depth Bessel beams that are traditionally generated using axicons and have been widely used in microscopy imaging. A metasurface approach to generate a Bessel beam (axicons) $[55, 64]$ has been demonstrated by creating a linear phase gradient along the radial direction of the metasurface. An arbitrary spatially varying phase profile can be created in the azimuthal direction. A V-shaped antenna based metasurface has been used to create a vortex beam (i.e., Laguerre-Gaussian modes) from a Gaussian beam $[12, 65]$ , resulting in optical singularity at the beam center and a helicoidal equal-phase wavefront carrying orbital angular momentum. Using a phase profile based on the Pancharatnam-Berry phase, a broadband phase plate generating optical vortex beams has been demonstrated using an array of rod antennas with different orientations (see figure 4(c) and (d)) $[46]$ .
+
+The most complex and general wavefront shaping is to create a holographic image in the far-field. Meta-surfaces provide the degrees of freedom to engineer the local amplitude, phase, and polarization response on an interface, and thus are a good platform to realize all types of computer-generated holograms (CGHs) (e.g., binary holograms, phase-only holograms, amplitude and phase modulation holograms). Figure 7(a) shows a metasurface consisting of arrays of nanoaperture antennas that produce a spatially varying transmission coefficient [22]. By utilizing the dispersion of aperture antennas, the metasurface was designed to operate as two distinctive binary transmission holograms at two different wavelengths, $\lambda_{1}=905$ nm and $\lambda_{2}=1385$ nm. It creates a word “META” shown in figure 7(b) at $\lambda_{1}=905$ nm and a word “CGH” shown in figure 7(c) at $\lambda_{2}=1385$ nm in the far-field. In another metasurface hologram, V-shaped aperture antennas shown in figure 7(d) were used to introduce an eight-level phase distribution and a two-level amplitude distribution [66]. The amplitude and phase distributions approximated the required near-field amplitude and phase distributions on the metasurface plane, so that a certain holographic image was obtained in the far-field, as shown in figure 7(f). Additionally, a reflect-array metasurface that introduced a 16-level Pancharatnam-Berry phase has been demonstrated to create complex holographic images in the far-field (figure 7(g), (h) and (i)) [67]. The antenna-orientation-controlled Pancharatnam-Berry phase combined with the reflect-array design led to broadband performance and high efficiency of the hologram. Experimentally
+
+![](images/df4c3b002b6c409d82b06721889eb2f425e550037789401b501c08d8bce2ea6a.jpg)  
+Figure 7. Metasurface holograms. (a) SEM image of part of a metasurface hologram consisting of nanoaperture antennas. Different colors represent pixels with distinctive transmission coefficients. (b) and (c) Transmitted light intensity of the metasurface in (a) recorded in the far-field at $\lambda_{1}=905$ nm and $\lambda_{2}=1385$ nm, respectively. (d) SEM image of a fabricated metasurface for generating a holographic image of the letter “P”. Inset: zoomed-in view of the hologram. (e) Simulated and (f) measured holographic image created by the metasurface holograms similar to (d) with an eight-level phase modulation and a two-level amplitude modulation. (g) One-pixel cell structure of a nanorod-based hologram. The nanorod can rotate in the x-y plane with an orientation angle $\phi$ to create different Pancharatnam?Berry phase delays. (h) 16-level phase distribution of the nanorod-based hologram ( $100\times100$ pixels shown). (i) Experimentally obtained image in the far field created by the nanorod-based hologram at 632.8 nm wavelength. (a)-(c) used with permission from [22], (d)-(f) used with permission from [66], and (g)-(i) used with permission from [67].
+
+demonstrated efficiency reaches 80% at $\lambda = 825$ nm and the hologram operates between 630 nm and 1,050 nm.
+
+# 4. Polarization conversion
+
+Polarization state is an intrinsic property of electromagnetic waves, and the conversion between polarization states is very often highly desirable (or even necessary) for many modern electromagnetic and photonic applications. For instance, in advanced communication and sensing, converting linear polarization to circular polarization makes a beam resistant to environmental variation, scattering and diffraction. During recent years, conversion among polarization states using metasurfaces has attracted increasing interest due to their design flexibility and compactness. The accompanied capability of tuning a phase delay spanning the entire $2\pi$ range over a broad bandwidth and with a deep subwavelength resolution could potentially address some critical issues in the development of flat optics.
+
+Highly symmetric simple meta-atoms can be advantageous in maintaining polarization states. Breaking the symmetry can, however, provide additional degrees of freedom to achieve customized functionality
+
+that enables the manipulation of polarization states. Through tailoring the two eigenmodes corresponding to orthogonal linear polarizations, it is possible to have equal transmission magnitude but a relative phase delay $\Delta\phi$ at a specific frequency. Narrowband polarization conversions between linear and circular polarization states ( $\Delta\phi = \pi/2$ , quarter wave plates), or linear polarization rotation ( $\Delta\phi = \pi$ , half wave plates) have been realized using single-layer metasurfaces [68–73] or multi-layer cascading metasurfaces [74–76] operating from microwave to optical frequencies. However, the efficiency is limited, in general, up to 50% with a bandwidth comparable to a meanderline quarter wave plate [68,77]. The low level of polarization conversion efficiency can be addressed by the implementation of few-layer metasurfaces.
+
+Following the Jones matrix description [43, 44] the transmission of linearly polarized incident fields $(E_{x}, E_{y})$ through a metasurface can be described as
+
+$$
+\begin{array}{l} \binom{E _ {\mathrm{x}} ^ {\mathrm{t}}}{E _ {\mathrm{y}} ^ {\mathrm{t}}} = \left( \begin{array}{c c} T _ {\mathrm{xx}} & T _ {\mathrm{xy}} \\ T _ {\mathrm{yx}} & T _ {\mathrm{yy}} \end{array} \right) \binom{E _ {\mathrm{x}} ^ {\mathrm{i}}}{E _ {\mathrm{y}} ^ {\mathrm{i}}} \\ = \hat {T} _ {\text {lin}} \binom{E _ {\mathrm{x}} ^ {\mathrm{i}}}{E _ {\mathrm{y}} ^ {\mathrm{i}}}, \tag {9} \\ \end{array}
+$$
+
+For circularly polarized incident fields, it becomes
+
+$$
+\begin{array}{l} \binom{E _ {+} ^ {\mathrm{t}}}{E _ {-} ^ {\mathrm{t}}} = \left( \begin{array}{c c} T _ {+ +} & T _ {+ -} \\ T _ {- +} & T _ {- -} \end{array} \right) \binom{E _ {+} ^ {\mathrm{i}}}{E _ {-} ^ {\mathrm{i}}} \\ = \hat {T} _ {\text {circ}} \binom{E _ {+} ^ {\mathrm{i}}}{E _ {-} ^ {\mathrm{i}}}, \tag {10} \\ \end{array}
+$$
+
+where $T_{\pm \pm} = \frac{1}{2}(T_{\mathrm{xx}} + T_{\mathrm{yy}}) \pm \frac{i}{2}(T_{\mathrm{xy}} - T_{\mathrm{yx}})$ and $T_{\pm \mp} = \frac{1}{2}(T_{\mathrm{xx}} - T_{\mathrm{yy}}) \mp \frac{i}{2}(T_{\mathrm{xy}} + T_{\mathrm{yx}})$ . Under normal incidence and in general, $x$ and $y$ directions do not necessarily coincide with the structure's principal axes. There are a few properties of Jones matrices that are related to metasurface structural symmetries:
+
+(i) All components in the Jones matrices could be different if the metasurface lacks reflection or rotational symmetries;  
+(ii) If the metasurface structure has a mirror symmetry, $T_{\mathrm{xy}} = T_{\mathrm{yx}}$ and $T_{++} = T_{--}$ , and if the incident linear polarization is further parallel or perpendicular to the symmetry plane, $T_{\mathrm{xy}} = T_{\mathrm{yx}} = 0$ ;  
+(iii) For metasurface structures with a $C_{4}$ or $C_{3}$ rotational symmetry with respect to the z-axis, we have $T_{xx} = T_{yy}$ , $T_{yx} = -T_{xy}$ , and $T_{+-} = T_{-+}$ .
+
+When designing metasurfaces for polarization conversion between the same kinds (x and y linear polarizations or left- and right-handed circular polarizations), we need to maximize the off-diagonal components of the Jones matrices. For the conversion between linear and circular polarizations, the metasurfaces need to enable $\pi/2$ phase difference between the orthogonal components.
+
+# 4.1. Linear-to-circular polarization conversion
+
+An antenna array backed with a ground plane has been widely exploited at microwave frequencies to enhance the radiation efficiency and beam directionality. This configuration also enhances the polarization conversion in reflection for anisotropic subwavelength metallic resonator arrays. Early work at microwave frequencies demonstrated that narrowband conversion to various polarization states, including linear-to-circular polarization and linear polarization perpendicular to the incident one, is possible depending on the structural parameters, incident angle, and frequency $[78]$ . It has also been shown that a pair of perpendicularly oriented and detuned electric dipoles (e.g., rectangular, elliptical, squeezed cross resonators, etc.) can be used to manipulate polarization states including the construction of quarter-wave plates operating in reflection at optical wavelengths $[79, 80]$ . This type of structure is similar to those widely used in metamaterial perfect absorbers $[81]$ , where the Fabry-Pérot-like interference plays an important role $[82]$ .
+
+New device functionalities could be realized by controlling spatial distribution of polarization response using metasurfaces. Figure 8 show a metasurface-based quarter-wave plate $[33]$ that generates high-quality circularly polarized light (degree of circular polarization or ellipticity > 0.97) over a broad wavelength range ( $\lambda = 5$ to $12 \mu m$ ) (figure 8(c)). The unit cell of the metasurface comprises two subunits (colored pink and green in figure 8(a) and (b)). Upon excitation by linearly polarized incident light, the subunits generate two co-propagating waves with equal amplitudes, orthogonal linear polarizations, and a $\pi/2$ phase difference (when offset $d = \Gamma/4$ ), which produce a circularly polarized anomalously refracted beam that bends away from the surface normal.
+
+By increasing the number of layers to two or three, the near field or Fabry-Pérot-like coupling can significantly enhance the efficiency of linear-to-circular polarization conversion as well as the operation bandwidth. This property is realized in the few-layer metasurface structures illustrated in figure 9 and figure 10. An ABA-type, anisotropic tri-layer metasurface, shown in figure 9(a), has enabled narrowband, highly efficient linear-to-circular polarization conversion in transmission at microwave frequencies [83]. Here layer A is an electric metasurface with periodically arranged resonant microstructures, while layer B is a metallic mesh. There are two mechanisms that are responsible for transparency. The first one is the electromagnetic wave tunneling [84] (a mechanism that is essentially equivalent to Fabry-Pérot-like resonance [85]), and the second one is the extraordinary optical transmission (EOT) of layer B that is mediated by the periodic structure of
+
+![](images/ea737f38faf4616865317966a8ec254b4eedab87e76e722b80071b3dbb94438a.jpg)  
+Figure 8. (a) Schematic of a metasurface quarter-wave plate, with the unit cell of the metasurface consisting of two subunits (pink and green). Each subunit contains eight V-antennas. Upon excitation by linearly polarized incident light, the subunits generate two copropagating waves with equal amplitudes, orthogonal linear polarizations, and a $\pi/2$ phase difference (when offset $d = \Gamma/4$ ), which produce a circularly polarized anomalous refraction that is separated from the normal beam. (b) SEM image of a portion of the fabricated metasurface quarter-wave plate with a footprint of $230 \times 230 \mu m^{2}$ to accommodate the plane-wave like incident light. Antenna orientation angles are indicated by $\beta_{1}$ and $\beta_{2}$ , and dashed lines represent the antenna symmetry axes. (c) Calculated degree of circular polarization and intensity of the anomalously refracted beam as a function of wavelength, showing the broadband and high efficiency properties of the quarter-wave plate. Used with permission from [33].
+
+layer A [83]. Through structural tailoring, these two transparency bands, corresponding to the two orthogonal linear polarization directions (x and y), can overlap and, at the same time, have a phase difference of $\pi/2$ , as shown in figure 9(b) at the frequency indicated by the dashed vertical line. This means that an incident electromagnetic wave linearly polarized at $45^{\circ}$ has been transformed to a circularly polarized one, with a conversion efficiency greatly exceeding any single-layer metasurface.
+
+![](images/2b466edd10e27d3e0fc5d7546fc482338a18097c26957501daa769eb42870768.jpg)  
+Figure 9. (a) Unit cell of a tri-layer ABA-type narrowband microwave linear-to-circular polarization converter, with the transmission amplitude and phase shown in (b) at two orthogonal directions. The operation frequency is indicated by the dashed vertical line. Used with permission from [83].
+
+Bi-layer metasurfaces have enabled high-efficiency and broadband conversions from linear to circular polarizations $[86,87]$ . A bi-layer metasurface comprised of stacked and twisted metallic wire grids shown in figure 10(a) was developed to operate at THz frequencies $[86]$ . For normal incidence and linearly polarized light in the x direction, the first wire grid is aligned at $45^{\circ}$ with respect to x direction. The wire grid is designed such that the transmission amplitude of orthogonal components $|t_{xx}|$ and $|t_{xy}|$ are approximately constant and equal, while the linear phase retardance is frequency dependent. This frequency dependent phase retardance is compensated through tailoring the geometric parameters of the second wire grid, which also has simultaneously high transmission coefficients $|t_{xx}|$ and $|t_{yy}|$ . The metallic grids were embedded within a polyimide film so there are 4 interfaces: front air/polyimide, front wire grid, back wire grid, and back polyimide/air. Through combining the multiple reflections due to these interfaces and the dispersion of specially
+
+designed wire grids, the overall output of the two orthogonal x and y components have approximately equal amplitude and a phase delay of about $90^{\circ}$ , resulting in circularly polarized transmission over a relatively broad bandwidth from 0.98 to 1.36 THz where the ellipticity is about 0.99, as shown in figure 10(b). Circular-to-circular polarization conversion was demonstrated employing a tri-layer metasurface designed through the approach developed by Pfeiffer and Grbic [88], with the unit cell illustrated in figure 10(c). The measured and simulated Jones matrix of the metasurface [89], shown in figure 10(d), reveals a high transmittance of 50% for right-handed to left-handed circular polarization conversion, while all other components in the Jones matrix are below 2.5%, suggesting an extinction ration of $\sim 20:1$ at the designed wavelength of $1.5 \mu m$ . It was also observed that the circular-to-circular polarization conversion extends over a quite broad wavelength range.
+
+![](images/486c72ecbb900f1b0b3d4d225ea84acfe1c1ef8453a3c7a117c42be82ef1a6e5.jpg)
+
+<details>
+<summary>text_image</summary>
+
+(a)
+400 mm
+40 µm
+1 mm
+(b)
+</details>
+
+(b)
+
+![](images/161fb83d186fc132dfc812e4f389d7dde0dbc77257c17a7dd868b2b78c941d46.jpg)
+
+<details>
+<summary>line</summary>
+
+| 0.7 | ~0.27 | ~0.66 | ~89 | ~0.72 |
+| --- | --- | --- | --- | --- |
+| 0.8 | ~0.38 | ~0.64 | ~89 | ~0.80 |
+| 0.9 | ~0.48 | ~0.62 | ~90 | ~0.88 |
+| 1.0 | ~0.50 | ~0.50 | ~92 | ~0.94 |
+| 1.1 | ~0.55 | ~0.55 | ~93 | ~0.95 |
+| 1.2 | ~0.62 | ~0.60 | ~96 | ~0.95 |
+| 1.3 | ~0.61 | ~0.58 | ~95 | ~0.95 |
+| 1.4 | ~0.60 | ~0.50 | ~88 | ~0.95 |
+| 1.5 | ~0.67 | ~0.38 | ~92 | ~0.88 |
+</details>
+
+![](images/254125924822036ffa19c78d8304b20d1ce274f5029be869e54052431601a45a.jpg)
+
+<details>
+<summary>text_image</summary>
+
+(c)
+SU-8
+374 nm
+(λ/4.0)
+SiO₂
+374 nm
+(λ/4.0)
+400 nm
+(λ/3.75)
+x
+y
+z
+</details>
+
+![](images/b747b8eaaae48263470432852e58cda4d7f0b4f1681db149929d64b589f2368f.jpg)
+
+<details>
+<summary>line</summary>
+
+| \(\lambda (\mu m)\) | T_LL | T_LR | T_RL | T_RR |
+| --- | --- | --- | --- | --- |
+| 1.2 | ~0.04 | ~0.17 | ~0.02 | ~0.02 |
+| 1.3 | ~0.02 | ~0.30 | ~0.02 | ~0.02 |
+| 1.4 | ~0.01 | ~0.45 | ~0.02 | ~0.02 |
+| 1.5 | ~0.01 | ~0.53 | ~0.02 | ~0.02 |
+| 1.6 | ~0.03 | ~0.55 | ~0.03 | ~0.03 |
+| 1.7 | ~0.07 | ~0.52 | ~0.05 | ~0.05 |
+| 1.8 | ~0.11 | ~0.49 | ~0.07 | ~0.08 |
+| 1.9 | ~0.14 | ~0.46 | ~0.09 | ~0.11 |
+| 2.0 | ~0.16 | ~0.43 | ~0.11 | ~0.13 |
+</details>
+
+Figure 10. (a) Optical images with different levels of zooming for a fabricated bi-layer THz metasurface embedded within a polyimide film. (b) Experimentally measured transmission amplitude, phase retardation, and ellipticity under horizontally polarized incidence, for the sample shown in (a). (c) Unit cell of a tri-layer metasurface for circular-to-circular polarization conversion operating at the near infrared, with simulated and measured transmittance shown in (d). (a) and (b) used with permission from [86], (c) and (d) used with permission from [89].
+
+# 4.2. Linear polarization rotation
+
+Planar chiral response can yield optical activity, rotating the direction of linear polarization. While the polarization rotation power may significantly exceed naturally occurring materials per unit thickness, typically it is insufficient to obtain the desirable $90^{\circ}$ polarization rotation. Increasing the number of layers can yield half wave rotation; however, in general, this approach cannot sustain the polarization rotation power through increasing the number of layers by simple stacking, due to the near-field coupling or interference of the multireflections. In the past, efficient linear polarization conversion still employed anisotropic properties of metamaterials.
+
+![](images/6da6a69c6f27e443dca888725ea05aaab3035b390257909fed52469f76f17d70.jpg)
+
+![](images/b967043510fee194d9459e821a47403d8997f920c9f2487e73ba9db6b48aae09.jpg)
+
+<details>
+<summary>line</summary>
+
+| Frequency (THz) | Co-polarization (Reflectance) | Cross-polarization (Reflectance) |
+| --- | --- | --- |
+| 0.3 | 1.0 | 0.0 |
+| 0.4 | ~0.95 | ~0.02 |
+| 0.5 | ~0.65 | ~0.25 |
+| 0.6 | ~0.35 | ~0.65 |
+| 0.7 | ~0.15 | ~0.82 |
+| 0.8 | ~0.02 | ~0.85 |
+| 0.9 | ~0.12 | ~0.80 |
+| 1.0 | ~0.14 | ~0.82 |
+| 1.1 | ~0.10 | ~0.85 |
+| 1.2 | ~0.05 | ~0.88 |
+| 1.3 | ~0.01 | ~0.87 |
+| 1.4 | ~0.01 | ~0.88 |
+| 1.5 | ~0.03 | ~0.86 |
+| 1.6 | ~0.06 | ~0.85 |
+| 1.7 | ~0.09 | ~0.84 |
+| 1.8 | ~0.08 | ~0.83 |
+| 1.9 | ~0.02 | ~0.65 |
+| 2.0 | ~0.60 | ~0.05 |
+</details>
+
+Figure 11. Metasurface broadband polarization conversion in reflection. (a) Schematic metasurface structure. The incidence angle $\theta_{i}=25^{\circ}$ , and the incident electric field $E_{0}$ is linearly polarized in the x direction with an angle $\alpha=45^{\circ}$ with respect to the cut-wire orientation. (b) Experimentally measured co- and cross-polarized reflectance. (c) Cross- and (d) copolarized multiple reflections theoretically calculated at 0.76 THz, revealing the constructive and destructive interferences, respectively. Used with permission from [56].
+
+A simple structure is shown in figure 11(a) where an array of cut-wires was separated from the ground plane by a polyimide spacer [56]. Under normal incidence, the incident $x$ polarized THz waves were converted to $y$ polarized waves in reflection with a conversion efficiency higher than $80\%$ over an ultrabroad bandwidth, as shown in figure 11(b). The co-polarized reflection approaches zero at several individual frequencies where the destructive interference conditions [56, 82] are largely satisfied, as illustrated in figure 11(c) and (d), in which the superposition seems to be responsible for the observed broadband performance. Following this concept, a variety of metasurface structures, mostly at microwave frequencies, have been demonstrated to accomplish multi-band and ultra broadband linear polarization conversion in reflection [90]; even at visible wavelengths the high efficiency can be still
+
+largely maintained according to the simulation results in [91]. The observed linear polarization rotation is consistent with an earlier contribution using a similar structure to control optical polarization in a reflection geometry [92], while the bandwidth was much improved and different theoretical models were used. In order to avoid the increasing metallic loss in the optical frequency range, dielectric metasurfaces for linear polarization conversion in reflection were also demonstrated, based on the same principle [93] (see discussions in section 5).
+
+It is more desirable to have linear polarization converters operating in the transmission mode. There have been a few bi-layer or tri-layer metasurfaces demonstrated to realize cross polarization conversion operating at a narrow single band or multiple bands $[96–98]$ , where the polarization rotation is insensitive to the azimuthal angle of the incident polarization due to the use of structures with four-fold rotational symmetry. Figure 12(a) shows the anisotropic unit cell of a bi-layer metasurface for $90^{\circ}$ rotation of the THz linear polarization, consisting of a front array of asymmetric split-ring resonators (ASRR) for polarization conversion and a rear array of S-shaped resonators (SR) for polarization selection $[94]$ . For the ASRR metasurface, the incident x-polarized THz waves induces currents and forms a net electric dipole in the y-direction, providing both x- and y-polarized components in reflection and transmission. The SR metasurface, however, exhibits negligible polarization conversion; it was tailored to have a resonance frequency coinciding with the ASRRs for x-polarized waves, allowing only y-polarized waves to pass through and blocking the x-polarized waves. Due to the dispersion of the metasurfaces and through carefully optimizing the PET spacer thickness, a Fabry-Pérot resonance occurs within the ultrathin polarization rotator, which can enhance the polarization conversion efficiency exceeding that of the ASRR metasurface alone. Although numerical simulations predict a conversion efficiency of 50% (cross-polarized transmission magnitude 0.71) and a polarization-conversion ratio (PCR) up to 99.9% using lossless PET spacer, the experimental values realized are 23% (magnitude 0.48) and 97.7%, respectively, at 1.04 THz as shown in figure 12(b), due to the significant loss within the PET spacer $[94]$ .
+
+Increasing the conversion efficiency and/or bandwidth becomes particularly interesting when metasurfaces are used to realize a new class of flat optical components where the transmission phase can be simultaneously controlled. An intriguing example for linear polarization rotation is a tri-layer THz metasurface demonstrated by Chen and co-workers [56]. It consists of a pair of identical gratings that are aligned in or-
+
+thogonal directions, and an array of cut-wires tilted at an azimuthal angle of $45^{\circ}$ , as shown in figure 12(c). The front grating is transparent when the incident THz field is linearly polarized along the x direction. As it continues to propagate and excite the cut-wires, the scattering results in both x and y polarized components. For forward scattering, the back grating allows the newly generated y polarized component to pass through while blocking the x polarized component; for back scattering, the front grating reflects the y polarized component and allows the x polarized component to pass. This process continues due to a multireflection process within this multi-layer structure. When the thicknesses of the polyimide spacer layers are carefully tuned, a constructive interference enhances the polarization conversion and a destructive interference of the co-polarized reflections largely reduces the reflection loss (insertion loss) at multiple frequencies, as shown in figure 12(d), a mechanism similar to metamaterial antireflection coatings [85] and perfect absorbers [82]. The back grating also guarantees a purely y polarized output – there is practically no co-polarized transmission. The overall result is that the x polarized incident THz waves can be completely converted to its orthogonal y polarization, over a bandwidth exceeding 2 octaves and with a conversion efficiency up to 80%. Simply by scaling, a variety of similar structures [99, 100] were employed in the microwave and infrared frequency ranges to demonstrate broadband, high-efficiency linear polarization rotators. Furthermore, in the structure shown in figure 12(c), the transmission phase can be finely tuned to span an entire $2\pi$ range and with subwavelength resolution through replacing the cut-wires with a variety of anisotropic resonators with varying geometric dimensions [56]. Combining this property and the high polarization conversion efficiency promises great potential in wavefront control, resulting in a new class of practical flat optical devices.
+
+A similar broadband THz polarization rotator was demonstrated by Cong et al. [95], where the middle cut-wire array was replaced by a wire grating, as schematically shown in figure 12(e). The formation of a Fabry-Pérot cavity makes this metasurface structure perform in remarkable contrast to cascading wire polarizers with consecutive $45^{\circ}$ rotation. The latter does rotate the incident linear polarization by $90^{\circ}$ but allows only up to 25% power transmission. This metasurface showed a conversion efficiency up to 85%, and the output waves exhibit extremely clean cross linear polarization over a broad bandwidth, as shown in figure 12(f), although the transmission phase cannot be controlled.
+
+![](images/3c184d2961c7d33d887a81515822252f71253407c5874ee49bb5f4cb7470bda1.jpg)  
+Figure 12. (a) Unit cell (left panel) and optical images (right panel) of a bi-layer polarization rotator, and (b) measured co- and cross-polarized transmission coinciding with the simulated results, together with the polarization conversion ratio. (c) Schematic of the unit cell of a tri-layer metasurface linear polarization converter and (d) cross-polarized transmittance obtained through experimental measurements, numerical simulations, and theoretical calculations, together with the numerically simulated co-polarized reflectance. (e) Schematic of a tri-layer metasurface polarization rotator consisting of three metallic gratings, and (f) experimental transmittance spectra. (a) and (b) used with permission from [94], (c) and (d) used with permission from [56], (e) and (f) used with permission from [95].
+
+# 4.3. Asymmetric transmission
+
+By reducing the structural symmetry and converting between polarization states, metasurfaces have yielded a polarization sensitive and asymmetric transmission with respect to the direction of wave propagation [101]. Asymmetric polarization conversion and transmission were observed in planar chiral metasurfaces for circularly polarized incident fields with $T_{\pm \mp}^{\mathrm{f}} \neq T_{\mp \pm}^{\mathrm{f}}$ and $T_{\pm \mp}^{\mathrm{f}} \neq T_{\pm \mp}^{\mathrm{b}}$ , where the superscripts "f" and "b" denote the forward and backward propagation directions, respectively, though $T_{\pm \pm}^{\mathrm{f}} = T_{\pm \pm}^{\mathrm{b}}$ and $T_{\pm \mp}^{\mathrm{f}} = T_{\mp \pm}^{\mathrm{b}}$ as required by Lorentz Reciprocity Lemma. The planar chiral metasurfaces are more transparent to a circularly polarized wave from one side than from the other side, with an experimentally measured transmission difference up to $40\%$ at microwave [101] and $15\%$ at visible [102, 103] frequencies. This effect is caused by the different efficiencies of polarization conversion in the opposite propagation directions for lossy metasurfaces, in remarkable contrast to the optical activity and Faraday effect. It implies that when circularly polarized light passes through the metasurface and then retraces its path after reflection from a mirror, the final polarization state will be different from that of the initial state [104].
+
+Bi-layer and multi-layer metasurfaces can increase the polarization conversion and consequently enhance the transmission asymmetry. Pfeiffer and Grbic recently presented systematic methods to analyze and synthesize bianisotropic metasurfaces realized by cascading anisotropic, patterned metallic sheets. This design approach starts with the desirable S-parameters and solves for the necessary admittances of the metallic sheets. Once the required sheet admittances are known, the theory of frequency-selective surface and full-wave numerical simulations are used for their physical realization. One such metasurface exhibiting strongly asymmetric transmission of circularly polarized millimeter waves is shown in figure 13(a) and (b) [88]. As shown in figure 13(c), the $S_{21}$ parameter (i.e., transmission) is below -10 dB for ++, +-, and --, and it is above -0.8 dB for -+, resulting in an asymmetric response of 0.99 over a bandwidth of 20% at the designed millimeter wavelengths. Similar behaviors were observed in tri-layer metasurfaces operating at near infrared wavelengths [89], as shown in figure 10(c) and (d).
+
+A variety of bi-layer metasurfaces have been also reported to exhibit asymmetric transmission for linearly polarized incident light $[105,106]$ . Further developments showed that bi-layer metasurface structures can be used to demonstrate increased bandwidth of the asymmetric transmission in the near infrared $[107,108]$ . It was shown that the interlayer alignment could have very little effect on the asymmetric transmission $[107]$ , which indicates that the near-field coupling is negligible. This advantageous property is particularly useful in the optical regime where the interlayer align-
+
+![](images/2e84d5613f79df682bc4013a563be60978d1dd8988631010120f1f11188e4049.jpg)  
+Figure 13. (a) Schematic of a tri-layer metasurface unit cell and (b) optical image of its top metallic sheet, which exhibits asymmetric transmission of circularly polarized millimeter waves with transmission coefficients shown in (c). Solid curves: measured data; dashed curves: simulated data. (d) The unit cell of a tri-layer metasurface which enables (e) broadband and highly asymmetric transmission of linearly polarized millimeter waves. Used with permission from [88].
+
+ment is challenging. In order to take full advantage of the asymmetric transmission, it is necessary to suppress other components and only obtain a high contrast asymmetric component (e.g., $t_{yx}$ ) within the Jones transmission matrix [109–111]. Tri-layer metasurfaces have demonstrated the best performance in both the efficiency and bandwidth. Excellent examples include the ultra-broadband THz linear polarization rotator shown in figure 12(c)-(f), which exhibits a bandwidth over two octaves [56,95]. Another tri-layer metasurface is shown in figure 13(d) and (e), which demonstrates highly efficient, broadband asymmetric transmission of linearly polarized millimeter waves [88]. The simulated results show that a 1-dB transmission bandwidth of 2.43:1 for the desired polarization is achieved, and that the rejection of the unwanted polarization exceeds 30 dB in this band.
+
+# 5. Dielectric metasurfaces
+
+The majority of metasurface research has focused on using subwavelength metallic structures, where ohmic losses pose a severe issue, particularly in the optical frequency range, limiting the performance of arguably any desirable functions. Low-loss, high-refractive-index dielectric materials have received much attention during recent years partially due to their ability in addressing the efficiency issue in metallic metasurfaces. Furthermore, the capability of tuning the magnetic and electric resonances through tailoring the geometry and spacing of dielectric resonators enables device functionalities beyond metallic metasurfaces.
+
+# 5.1. Dielectric resonators
+
+Dielectric resonators can be traced back to the discussions by Richtmyer [112]. Due to the excitation of the resonant modes as well as their leaky nature, dielectric resonators can serve as radiative antennas, as developed theoretically and experimentally in the 1980's by Long et al. at microwave frequencies [113]. Increasing the dielectric constant $\epsilon$ can significantly reduce the required size d of the resonators, which is related to the free space resonant wavelength $\lambda_{0}$ by $d \sim \lambda_{0}/\sqrt{\epsilon}$ . However, increasing the dielectric constant also reduces the radiation efficiency and narrows the operational bandwidth, which is inversely related to the dielectric constant. Typical values of the dielectric constant used range from 8 to 100 in order to balance the compactness, radiation efficiency and bandwidth requirements. Very often dielectric resonators are mounted on top of a metal ground plane, which improves the radiation efficiency and acts as an electrical symmetry plane
+
+to improve the compactness. Early work in resonant dielectric antennas at microwave frequencies has been summarized in review articles [114,115].
+
+In the optical regime, low loss dielectric particles support strong electric and magnetic scattering known as Mie resonances, which can be decomposed into a multipole series. The modes are determined by the particle size and structural properties $[116–119]$ , in contrast to metallic particles where the resonance scattering is dominated by the electric resonances. In most dielectric resonators of regular shapes such as spheres, cubes, cylindrical disks and rods, the lowest resonant mode is the magnetic dipole resonance and the second lowest mode is the electric dipole resonance $[119,120]$ . Figure 14 shows the fundamental magnetic and electrical dipole modes for a cubic dielectric resonator $[121]$ . The magnetic resonance mode originates from the excitation of circulating displacement currents, resulting in the strongest magnetic polarization at the center, similar to the case of magnetic resonant response in metallic SRRs. The contribution from other higher order modes can be ignored as the coefficients of these modes are often orders of magnitude lower $[122]$ .
+
+![](images/76a7708b6d740574046cc0fa22782db1a085d6ce7c1e9ce27fbfeac4812b6092.jpg)
+
+<details>
+<summary>text_image</summary>
+
+E
+k H
+(a)
+1.54x10^4
+1.35x10^4
+1.16x10^4
+9651
+7720
+5790
+3860
+1930
+0
+(b)
+1576
+1379
+1182
+985
+788
+591
+394
+197
+0
+(c)
+1.46x10^4
+1.28x10^4
+1.10x10^4
+9134
+7307
+5480
+3653
+1827
+0
+(d)
+1098
+961
+824
+686
+549
+412
+275
+137
+0
+E
+k H
+</details>
+
+Figure 14. Electric and magnetic modes in a cubic dielectric resonator. (a) and (b) Magnetic dipole resonance mode, showing electric field (a) and magnetic field (b) distributions. (c) and (d) Electric dipole resonance mode, showing electric field (c) and magnetic field (d) distributions. The incident fields are indicated in the insets. Reproduced with permission from [121].
+
+Subwavelength dielectric resonators can be used as the basic building blocks of metamaterials and metasurfaces, as first suggested by O'Brien and Pendry to obtain magnetic activity in dielectric composites [123]. A class of Mie resonance-based dielectric metamaterials have been consequently demonstrated, with some early work reviewed in [124], where high dielectric constant materials are used to create subwavelength resonators for the realization of negative electric and magnetic responses. Ferroelectric barium strontium titanate (BST or $\mathrm{Ba}_{0.5}\mathrm{Sr}_{0.5}\mathrm{TiO}_3$ )
+
+was used to demonstrate dielectric metamaterials because of its high dielectric constant ( $\sim$ 600) at microwave frequencies. Left-handed behavior was observed in prisms formed by an array of periodic or random subwavelength BST rods [125], and negative magnetic response was also observed in a bulk metamaterial consisting of an array of subwavelength BST cubes [121]. In the optical frequency range, materials used to form dielectric metamaterials include tellurium (Te) cubes on barium fluoride (BaF $_{2}$ ) [126], cubic ( $\beta$ ) phase silicon carbide (SiC) whiskers on zinc selenide (ZnSe) [127, 128], in the mid-infrared; silicon cylindrical nano disks embedded within silicon dioxide [129] in the near infrared; silicon nano spheres on glass [130] and titanium dioxide cylindrical disks on silver [21] at visible frequencies.
+
+The loss reduction enabled by dielectric metasurfaces becomes clear when functioning as a linear polarization rotator as shown in Figure 15, where an array of anisotropic (rectangular) silicon resonators is separated from a metal ground plane by a thin layer of PMMA. In experiments, linear polarization conversion with more than 98% conversion efficiency was demonstrated over a 200 nm bandwidth in the near infrared $[93]$ , as shown in figure 15(c). This result exemplifies the significant loss reduction enabled by the use of dielectric metasurfaces instead of metallic resonators shown in figure 11, particularly in the infrared and visible frequency ranges.
+
+In general, dielectric resonators offer only up to $\pi$ phase variation in transmission when the electric and magnetic resonances are at different frequencies. By overlapping the electric and magnetic dipole resonances through varying the geometry of dielectric resonators, however, it is possible to achieve a phase variation covering the entire $2\pi$ range [131]. This was experimentally verified even without satisfying the condition of equal electric and magnetic resonance width [132]. In cylindrical dielectric disks, the tuning parameter could be the disk height, diameter, and period (spacing). The spacing between resonators further facilitates the tuning of resonance coupling [118], which affects the dispersion of the scattering phase resulting from the different transverse electric and transverse magnetic modes, and also enables electromagnetically induced transparency in dielectric metasurfaces with an ultra high quality factor [133].
+
+# 5.2. Directional scattering
+
+In 1983 Kerker et al. discussed electromagnetic scattering by magnetic spheres. It was shown that back scattering can be reduced to zero by spheres with equal permeability $\mu$ and permittivity $\epsilon$ [134]. In such a situation the particle exhibits
+
+![](images/9a96eeab7cab10a5c414e3c18f32a250ec3be5c7a7749adf7a3274e1f5bb5eb8.jpg)  
+Figure 15. Dielectric metasurface for broadband polarization conversion in reflection. (a) Schematic and (b) SEM image of the dielectric metasurface structure. (c) Experimentally measured (solid lines) and numerically simulated (dotted lines) co- and cross-polarized reflectance. Used with permission from [93].
+
+equal electric and magnetic multipole coefficients, resulting in destructive interference in the backward propagating direction and constructive interference in the forward propagating direction. The magnetic Mie resonance overcomes the absence of magnetic materials at optical frequencies and enables the investigation of directional optical scattering using dielectric metasurfaces. The complete cancellation of back scattering was also theoretically predicted in $[118]$ at an off-resonance frequency in an array of silicon nano spheres where the electric and magnetic polarizabilities have equal values. Such a phenomenon corresponds to a 'Huygens' secondary source, and was experimentally demonstrated using nonmagnetic dielectric spherical and cylindrical scatters with moderate dielectric constants at microwave $[135]$ and visible $[136, 137]$ frequencies.
+
+The resonant directional scattering is more interesting because of the large field enhancement and concentration. Resonant response usually accompanies large back scattering, which makes it more feasible for dielectric metasurfaces to operate in a reflection configuration $[21, 93]$ . This enabled the demonstration of broadband dielectric metasurface mirrors $[138–140]$ and optical magnetic mirrors $[141,$
+
+[142], without reflection phase reversal in the latter. Using geometric shapes other than spherical or cubic dielectric resonators, one could have more degrees of freedom to tune independently the frequencies of electric and magnetic resonances to realize resonant directional scattering. This is exemplified by the closer electric and magnetic dipole resonances when squeezing the silicon spheres in the z-direction, which results in a larger forward-to-backward scattering ratio [136]. An array of silicon cylindrical nano disks, as shown in figure 16(a) and (b), was used to demonstrate resonant directional scattering in the visible wavelength range [129]. By varying the diameter of the silicon disks, it was observed that the electric and magnetic resonances overlap, resulting in enhanced forward scattering and cancellation of backward scattering, as shown in figure 16(c) and (d).
+
+![](images/5e9ffb3c116fb82cc81b330a33ae72d846bc343b48756daed0d99e4964afac80.jpg)  
+Figure 16. (a) Schematic of silicon nanodisks embedded into a low-index $\left(\mathrm{SiO}_{2}\right)$ medium. (b) SEM image of the fabricated silicon nanodisks before embedding them into $SiO_{2}$ . The insets show the close-up top and oblique views. (c) Optical transmittance and (d) reflectance spectra of the fabricated sample, where the white dashed ellipses indicate the regions where the back scattering is significantly reduced. Used with permission from [129].
+
+An ideal dielectric Huygens' metasurface requires overlapping electric and magnetic dipole resonances of equal resonance strength and width in order to completely cancel the reflection and obtain near unity transmission [132]. High transmittance of $55\%$ at resonance was experimentally demonstrated in the near-infrared using a silicon metasurface consisting of an array of cylindrical resonators embedded within an
+
+$\mathrm{SiO_2}$ environment, where the condition of equal width of the electric and magnetic resonances was not yet satisfied [132]. By tuning the dielectric constant of the environment and the geometric dimensions of the resonators, it is possible to achieve spectral overlap and equal width of the resonances. Post-fabrication active tuning of the resonances is attractive for this purpose as well. For instance, a layer of liquid crystals was added on top of the silicon nano disks, providing temperature-dependent refractive indices when the liquid crystals were switched between the nematic and isotropic phases [143]. It was shown that the electric resonance has a larger tuning range because of extended fringing fields outside the resonators, while the magnetic resonance has smaller tuning capability because of the better confined field distribution within the dielectric resonators. Reconfigurable directional scattering can be also accomplished using metasurfaces consisting of semiconducting resonator arrays through injection of free charge carriers by optical excitation [144].
+
+# 5.3. Beam forming and wavefront control enabled by dielectric metasurfaces
+
+Similar to metasurfaces consisting of plasmonic metallic resonators, wavefront control and beam forming can be accomplished using dielectric metasurfaces. By varying the dimensions of the rectangular silicon resonators shown in figure 15, a phase variation can span the entire $2\pi$ range. This enables the generation of a near infrared optical vortex beam in reflection with high efficiency when a phase gradient profile was created in the azimuthal direction using 8 elements of different sizes [93], as shown in figure 17(a-c). The use of a PMMA spacer layer between the silicon resonators and a metallic back plane not only provides the desirable interference resulting from the Fabry-Pérot-like multiple reflections, but also effectively prevents the incident light from coupling to surface waves. This is in remarkable contrast to the situation where the dielectric resonators are directly mounted onto the metallic surface [21]. In the latter work, a linear phase gradient at wavelength of 633 nm was created by using six $TiO_{2}$ cylindrical resonators of various diameters sitting on top of a silver plane (figure 17(d)), demonstrating a deflection from the specular reflection by the expected $20^{\circ}$ (figure 17(f)) [21]. It was shown that considerable dissipation occurs within the $TiO_{2}$ resonators, partially because this configuration can also function as a metamaterial absorber [145]. Even more optical power is coupled to surface waves, which was described in a recent theoretical proposal of directional launching of surface waves [146].
+
+A metasurface that converts a Gaussian beam into a vortex beam was demonstrated; it consists of four
+
+![](images/ac14cfbf77985d3aed6f6a3e534c79e4a257bc5b33d10c43f245b6d331fdfa9c.jpg)  
+Figure 17. (a) A phase profile in the azimuthal direction with an increment of $\pi/4$ , created using (b) silicon rectangular resonators on top of a metal mirror with a PMMA spacer, and enabling the formation of a near infrared optical vortex beam. The pattern in (c) is the interference between the vortex beam and a reference Gaussian beam. (d) Schematic of part of a reflect-array metasurface consisting of dielectric resonators patterned on a metallic substrate and operating at $\lambda = 633$ nm. (e) Simulated electric and magnetic field distributions in a dielectric resonator antenna. (f) Simulation showing that at zero-degree angle of incidence the metasurface in (d) generates a reflected wave propagating along $20^{\circ}$ direction from the surface normal. (a)-(c) used with permission from [93], (d)-(f) used with permission from [21].
+
+quadrants with a phase increment of $\pi/2$ and each quadrant consists of an array of cylindrical silicon nano disks of the same geometry but different separations between adjacent disks [147]. By varying the diameter of silicon nanoposts to control the phase profile, a high-efficiency lens was demonstrated with measured focusing efficiency in transmission up to 82% [148]. Through varying the geometric dimensions and coupling strength between dielectric resonators, it is possible to create the required phase profiles to simultaneously control the wavefront at multiple wavelengths. This approach was exploited in the demonstration of a multi-wavelength dielectric metasurface lens operating near telecommunication wavelengths [63, 149]. To achieve equal focal lengths at different wavelengths, the metasurface lens imparts a wavelength dependent phase contribution to compensate for the dispersive ac-
+
+![](images/45054db09b8f18f03ef4598b8ecda136c1bbbd50032be027352136c70dc6c783.jpg)  
+Figure 18. Multi-wavelength dielectric metasurface cylindrical lens. (a) False colored side-view SEM image of the metasurface lens. Each unit cell is identified by a different color. (b)-(d) Measured intensity distributions in the plane perpendicular to the silicon ridges at wavelengths (b) 1300 nm, (c) 1550 nm, and (d) 1800 nm. Used with permission from [63]
+
+cumulated propagation phase. This is achieved by designing the dispersive phase response of coupled dielectric ridge patterned on a fused silica ( $SiO_{2}$ ) substrate, as shown in figure 18(a). It creates a phase profile that realizes the same focal length for wavelengths at 1300, 1550, and 1800 nm as shown in figure 18(b-d). The focusing efficiency, defined as the ratio of power at the beam focal waist and the input power, is still rather low, in part due to the reflection loss. Few-layer metasurfaces introduced in previous sections could potentially address this issue of impedance mismatch and improve the focusing efficiency. For wavelengths other than these specific values, the operation of the lens follows the normal dispersion curves, which indicates that a dielectric metasurface lens that eliminates chromatic aberration over a broad range of wavelengths is still challenging to accomplish.
+
+An alternative approach to create a spatially-varying phase profile is through the use of Pancharatnam-Berry phase $[50]$ . The key is the conversion between left- and right-handed circular polarization states via different routes on the Poincaré sphere. The required polarization control can be achieved by the excitation of electric and magnetic resonances in dielectric resonators. Using silicon nanobeams with appropriate geometric dimensions, it was shown that the incident circularly polarized light is partially converted into circularly polarized light with opposite handedness with an imparted Pancharatnam-Berry phase depending on the orientation of the silicon nanobeams $[150]$ . The nanobeam metasurface exhibits anomalous refraction when forming a constant phase gradient. Linearly polarized incident light is split into right- and left-handed circularly polarized beams that propagate in different directions. Transmission spatial phase profiles have been also experimentally demonstrated, functioning as lenses for focusing and axicons for creating a Bessel beam (see figure 19) [150].
+
+![](images/1023c6de98d67434b06623840284179eafe7ebc66190f664b50500ccb81aa7d3.jpg)  
+Figure 19. (a) SEM image of a fabricated dielectric metasurface axicon consisting of silicon nanobeams. (b) Measured intensity profile of the nondiffractive Bessel beam generated behind the axicon in (a) in the $xz$ plane. Used with permission from [150].
+
+It is essential to realize simultaneous and complete control of polarization and phase with subwavelength resolution and high transmission. In the optical regime plasmonic metasurfaces partially accomplish this goal with limited efficiency $[47]$ . In a recent paper from Faraon's group, a dielectric metasurface platform was demonstrated based on elliptical high-contrast dielectric nanoposts that provide complete control of transmissive polarization and phase with measured efficiency ranging from 72% to 97%, achieved through varying the ellipticity, size, as well as orientation of the nanoposts $[151]$ . It was shown that most free space high-performance transmissive optical elements can be realized, such as lenses, wave plates, beamsplitters, holograms and arbitrary vector beam generators. Two examples are illustrated in figure 20 for incident polarization-dependent focusing.
+
+# 6. Metasurfaces for wave guidance and radiation
+
+In the previous sections we mainly focus on the physics and applications of metasurfaces in controlling waves that propagate in free space. The present section reviews the emerging research on using metasurfaces to control guided waves and to couple between guided waves and waves propagating in free space. Because of the spatial inhomogeneity of metasurfaces, they do not support any eigen guided modes. That is, waves
+
+(a)  
+![](images/81f420e16198817452cba5c30dfc89e685ff295f488451e95bbe0c16cd29499e.jpg)
+
+(b)  
+![](images/b50f8a1566ec0fb4df8338e1fc5e46949f9dc9ff5e3a69582f7e5d183cd88bd0.jpg)  
+Figure 20. (a) Dielectric metasurface that separates the x- and y-polarized incident light, deflecting and focusing them to two different spots. (b) Dielectric metasurface that focuses the incident circularly polarized light to a diffraction-limited spot or a doughnut-shaped spot depending on its handedness. Left column: schematic illustration of the devices; Mid-column: simulated and experimental results; Right column: SEM images of the dielectric metasurfaces. Used with permission from $[151]$ .
+
+propagating along metasurfaces are at a transient state and are constantly evolving. Thus, metasurfaces are most suitable for realizing mode conversions. By designing the in-plane effective wavevector using metasurface structures, one is able to realize conversion between two different guided modes or between a guided mode and a mode propagating in the free space.
+
+There are a couple of major differences between mode conversion using metasurfaces and using conventional grating-based mode converters:
+
+(1) Metasurfaces can be designed to provide a unidirectional phase gradient, or a unidirectional effective wavevector. The latter leads to an asymmetric coupling between modes: electromagnetic energy is transferred preferentially from one mode to the other, while the inverse process can be highly inefficient. Such asymmetric electromagnetic energy transfer between modes is maintained even when the conventional phase matching condition is not strictly satisfied (i.e., phase gradient $\mathrm{d}\Phi/\mathrm{d}r$ not equal to the difference in wave number between two modes, $\beta_{1}-\beta_{2}$ ). This property ensures that mode conversion can be realized over a broad spectral range and won't be greatly affected by small structural changes to the metasurfaces. On
+
+the contrary, conventional grating couplers provide positive and negative reciprocal lattice vectors, $\pm2\pi/\Lambda$ , where $\Lambda$ is the grating period. The coupling between two modes is symmetric, and thus the phase matching condition, $\beta_{1}-\beta_{2}=2\pi/\Lambda$ , has to be strictly satisfied to ensure that electromagnetic energy is transferred from one mode to the other.
+
+(2) The spacing between adjacent constituent elements in a metasurface is subwavelength. Therefore, metasurfaces are able to modify the wavevector of a guided wave adiabatically. The absence of abrupt variation of wavevectors prevents scattering of electromagnetic energy into free space or into the substrate. Grating couplers, however, have a periodicity comparable to the wavelength. Guided waves are likely to be scattered, which makes in-plane confinement of electromagnetic energy a challenge.
+
+# 6.1. Coupling between free space and surface waves
+
+The pioneering work on using metasurfaces to control guided waves was conducted by Sievenpiper and colleagues in the microwave spectral range $[152]$ . They used the concept of holography to design impedance surfaces that convert a given surface
+
+![](images/50011d2ce385b1dde60b92d0bec4304aa9cb85e49eb99c4adf303aa7c2f09c77.jpg)  
+Figure 21. (a) Schematic showing the concept of holographic leaky wave antenna. Surface waves (undulating arrows) are excited on a metasurface impedance surface, and are scattered by variations in the surface impedance to produce the desired radiation (straight arrows). (b) Unit cell of the impedance surface consisting of a patch antenna patterned on a metal grounded layer of insulator. (c) A section of the designed scalar impedance surface that scatters a cylindrical surface wave produced by a point source into a plane wave propagating along $60^{\circ}$ from the surface normal. (d) A section of the designed tensor impedance surface that scatters a cylindrical surface wave produced by a point source into a plane wave propagating along $45^{\circ}$ from the surface normal. (e) Black and gray curves are, respectively, radiation patterns of a monopolar antenna placed on the scalar holographic impedance surface and on a smooth metal surface. (f) Black and gray curves show, respectively, measured radiation patterns with left-handed and right-handed circular polarization produced by a monopolar antenna placed on the tensor holographic impedance surface. Used with permission from [152].
+
+wave into a freely propagating wave with desired far-field radiation pattern and polarization. The impedance surface is essentially a hologram, which is the interference pattern between a reference beam and an object beam, and carries information of the phase, amplitude and polarization of the desired object beam. The object beam is reconstructed when the reference beam impinges on the hologram. In Sievenpiper's implementation, a source antenna produces the reference beam in the form of a surface wave, $E_{surf}$ , and the object beam is the desired wave, $E_{rad}$ , propagating in the half space above the surface (figure 21(a)); microwave holograms are created according to the interference pattern produced by the two waves and consist of a square lattice of dissimilar sub-wavelength conductive patches on a metal-grounded dielectric substrate. Both scalar and tensor forms of the impedance surfaces were experimentally demonstrated.
+
+Surface impedance provides an appropriate language to characterize the properties of the metasurface. It is defined as the ratio between the electric and magnetic fields near the surface. For transverse magnetic (TM) waves (i.e., magnetic field transverse to the prop-
+
+agation direction) that propagate in the x-direction, the surface impedance is $Z(x,y)=E_{\mathrm{x}}(x,y)/H_{\mathrm{y}}(x,y)$ . The surface magnetic field is proportional to the surface current, which is provided by the electromagnetic source. For example, a monopole antenna produces a cylindrical distribution of surface current. The function of the impedance surface is to translate this surface current to a distribution of electromagnetic waves on the surface, which matches the desired radiative wave.
+
+In Sievenpiper and colleagues' work, square patch antennas (figure 21(b)) were used to construct scalar impedance surfaces and square patches with an additional slice were used for tensor impedance surfaces. The three independent terms in the impedance tensor, $Z_{xx}$ , $Z_{xy} = Z_{yx}$ and $Z_{yy}$ , are controlled by the three degrees of freedom in antenna design: the slice width, its orientation angle, and the gap between neighboring square patches. In the case of scalar impedance surfaces, the value of surface impedance of patch antennas was determined by the following procedure:
+
+(i) Calculating dispersion relation of surface waves propagating on a 2D periodic array of patch antennas. Specifically, Bloch boundary conditions
+
+are applied to a unit cell of the impedance surface, and eigen surface wave modes and their eigen wavevectors are determined for a range of frequencies.
+
+(ii) Calculating the surface impedance for a given operation frequency $\omega_0$ , $Z(\omega_0) = \int_{\mathrm{unit~cell}}(E_{\mathrm{x}} / H_{\mathrm{y}})\mathrm{d}x\mathrm{d}y$ .
+
+A library that relates the surface impedances and patch antenna geometries can be created by repeating the above procedure for patch antennas of different sizes.
+
+The distribution of surface impedance $Z(x, y)$ is determined by the following holographic technique. In the case of a scalar impedance surface, with a surface current $\mathbf{J}_{\mathrm{surf}}(x, y)$ produced by the electromagnetic source and the object far-field radiation $\mathbf{E}_{\mathrm{rad}}(x, y, z)$ , the required surface impedance is
+
+$$
+Z (x, y) = j \left\{ \right.X + M \operatorname{Re} \left[ \right.\left(\mathrm{E} _ {\text {rad,x}}, \mathrm{E} _ {\text {rad,y}}\right) \binom{J _ {\text {surf,x}}}{J _ {\text {surf,y}}}\left. \right)\left. \right]\left. \right\}. \tag {11}
+$$
+
+In the case of a tensor impedance surface, we have
+
+$$
+\begin{array}{l} Z (x, y) = j \left( \begin{array}{c c} X & 0 \\ 0 & X \end{array} \right) \\ + j \frac {M}{2} \mathrm{Im} \left[ \binom{E _ {\mathrm{rad,x}}}{E _ {\mathrm{rad,y}}}\right) (\mathrm{J} _ {\mathrm{surf,x}}, \mathrm{J} _ {\mathrm{surf,y}}) \\ \left. - \binom{J _ {\text {surf,x}}}{J _ {\text {surf,y}}} \left(E _ {\text {rad,x}}, E _ {\text {rad,y}}\right) \right]. \tag {12} \\ \end{array}
+$$
+
+In the above two equations, $X$ represents the average impedance value, and $M$ spans the entire available impedance range. Using the holographic technique and the library of patch antennas, Sievenpiper and coworkers demonstrated a scalar impedance surface that scatters the current generated by a monopolar antenna into a linearly polarized plane wave propagating along $60^{\circ}$ from the surface normal (figure 21(c) and (e)). The surface current has a cylindrical distribution and can be described by $\mathbf{J}_{\mathrm{surf}} = \frac{1}{r^2} \exp(-jk_0 n_{\mathrm{s}} r)(x, y, 0)$ , where $r = (x^2 + y^2)^{1/2}$ , $k_0$ is the free space wavevector, and $n_{\mathrm{s}}$ is the effective index of the surface current, which is assumed to be a constant and is a function of the thickness and materials of the dielectric spacing layer between the metal patches and the metallic ground. They also experimentally demonstrated a tensor impedance surface that converts the current generated by a monopolar antenna to a circularly polarized far-field radiation propagating along $45^{\circ}$ direction (figure 21(d) and (f)).
+
+Maci and colleagues used the same holographic principle to demonstrate metasurfaces with modulated surface impedance $[153,154]$ . They used square patch antennas of different sizes to create a spiral distribution of surface impedance that converts a surface current produced by a monopolar antenna to a collimated right-handed circularly polarized far-field radiation (figure 22). Podilchak and collaborators demonstrated
+
+![](images/7712d9377753ebdb6390879fa299d30a015f3adada6ac9441cbd95f7cc5aba40.jpg)  
+Figure 22. (a) Section of an impedance surface near the central monopolar antenna. (b) Right-handed circularly polarized radiation profiles produced by the impedance surface antenna near 17 GHz. Inset is the entire antenna with a radius of 9.7 cm. Used with permission from [153].
+
+experimentally [155] that width-modulated microstrip lines patterned on a grounded dielectric slab introduce a sinusoidally modulated surface impedance and provide appropriate conditions for leaky wave radiation (figure 23). Figure 24 show a holographic metasurface that detects optical vortex beams with specific orbital angular momentum (OAM) [156]. The nanostructured binary holograms shown in the left panel of figure 24(a) were created by calculating the interference pattern between a converging surface plasmon wave and an incident optical vortex beam. The simulated results in figure 24(a) show that a converging surface plasmon wave is generated only when an optical vortex beam with the correct OAM is scattered by the hologram. Experimental results in figure 24(b) show that a hologram can distinguish an optical vortex beam with OAM of -1 from optical vortex beams with other values of OAM.
+
+The major challenges in coupling an incident wave from free space into a surface wave with high efficiency are to suppress the reflection of the incident wave on the device surface and to prevent decoupling of the surface wave back into free space. In a series
+
+(a)  
+![](images/e716bf0db04b8091ef6d6845d05084fc3f122c3d8b41d0f1d24f38114a204765.jpg)
+
+<details>
+<summary>text_image</summary>
+
+SW Source
+(Bottom)
+Width-Modulated
+Microstrip Lines (Top)
+</details>
+
+(b)  
+![](images/decf64c8d36890233e4342ae5628bb5a1ef9d367c7ebac45d32d818b6583a965.jpg)
+
+<details>
+<summary>radar</summary>
+
+| Angle \(({}^{\circ})\) | Measured (dB) | Theoretical (dB) |
+| --- | --- | --- |
+| 0 | 0 | 0 |
+| -15 | ~-15 | ~-15 |
+| -30 | ~-25 | ~-25 |
+| -45 | ~-25 | ~-25 |
+| -60 | ~-25 | ~-25 |
+| -75 | ~-25 | ~-25 |
+| -25 | ~-25 | ~-25 |
+| -20 | ~-25 | ~-25 |
+| -15 | ~-25 | ~-25 |
+| -10 | ~-25 | ~-25 |
+| -5 | ~-25 | ~-25 |
+| 0 | 0 | 0 |
+</details>
+
+Figure 23. (a) Planar 2D leaky-wave antenna consisting of radially directed and width-modulated microstrip lines and is able to transform a cylindrical surface wave into leaky waves. (b) Broadside beam pattern of the leaky-wave antenna. Solid and dashed curves are, respectively, measured and simulated beam patterns at $\sim$ 22 GHz. Used with permission from [155].
+
+![](images/e6ec2934cfcaeba668eda8f09c3ccad45e329a910474f1cf298a13270d360fe5.jpg)  
+Figure 24. (a) Left panel: metasurface holograms for detecting optical vortex beams. Right panel: simulation results of the intensity distribution of surface plasmon waves generated by illuminating the holograms at normal incidence with different optical vortex beams. (b) Photocurrent as a function of incident polarization measured for a metasurface hologram designed for detecting optical vortex beams with orbital angular momentum of $L_{i} = -1$ . Used with permission from [156].
+
+of work from the Zhou group [14, 157, 158], a few strategies were devised to address these challenges: (1) the entire surface of the metasurface coupler is designed to be impedance matched with free space to minimize direct reflection; (2) the lateral effective wavevector provided by the metasurface is designed to be sufficiently large so that a surface wave with a wavevector larger than the free space wavevector is excited; the surface wave becomes even more evanescent as it further interacts with the gradient metasurface, which prevents decoupling of the wave back to the free space; (3) the impedance mismatch between the supercells of the metasurface coupler is reduced to prevent scattering of the surface wave. Through these approaches, the authors were able to demonstrate coupling of an incident wave from free space into a surface wave with efficiencies of $\sim94\%$ in simulations and $\sim73\%$ in experiments using microwaves [158].
+
+# 6.2. Control of surface waves
+
+The examples that have been discussed in this section so far are all about coupling surface waves and waves propagating in free space using metasurfaces. The subject of controlling the propagation of surface waves confined to a 2D plane is a new frontier of metasurface research.
+
+Vakil and Engheta proposed using graphene as an ultra-thin platform for controlling in-plane propagation of infrared electromagnetic waves $[159]$ . They demonstrated theoretically that by designing and manipulating spatially inhomogeneous conductivity patterns on a sheet of graphene using the electric field effect, one can realize a number of transformation optical devices. The example of a graphene metasurface Luneberg lens is shown in figure 25(a). The research group of S. Maci used patch antennas of different sizes or metallic pins of different heights to demonstrate two types of in-plane planar lenses (Luneberg lenses and Maxwell's fish-eye $[153]$ ; the latter is shown in figure 25(b)). In their pioneering work, Gok and Grbic used the concept of transformation electromagnetics to demonstrate independent control of the power flow and phase progression of electromagnetic fields in a 2D space (figure 25(c) and (d)) $[160]$ . The resulting metasurface is a highly inhomogeneous, anisotropic media where each unit cell is characterized by a $2 \times 2$ permeability tensor in the plane and a scalar permittivity in the surface normal direction. These parameters were judicially chosen to create stipulated 2D distributions of wavevector and Poynting vector, as well as to ensure impedance matching between the adjacent unit cells so that there is no reflection and scattering of the surface wave as it propagates on the metasurface.
+
+The concept of metasurfaces has been introduced
+
+![](images/9cbd56636ac63a8436f8a6ee65f947627361e2de70ce00580e86e2d3778a6f2d.jpg)  
+- Simulated (Boundary 1) ... Ideal (Boundary 1)
+- Simulated (Boundary 2) ... Ideal (Boundary 2)
+
+Figure 25. (a) Luneburg lens based on graphene metasurface. Shown is the simulated phase of $E_{y}$ of the surface plasmon at 30 THz on the graphene. $D = 1.5 \mu m$ , w = 75 nm, and $L = 1.6 \mu m$ . (b) Snapshot of the field in a metasurface Maxwell's fish-eye lens consisting of pins of different heights on a grounded slab and curvilinear trajectory of the real part of the Poynting vector. (c) Snapshot of simulated, vertical electric field ( $E_{z}$ ) of a metasurface that transforms a cylindrical surface wave into a surface wave with trapezoidal power density and linear phase progression. (d) Upper panel: simulated and ideal power densities along boundary 1 and boundary 2. Lower panel: phase profiles along boundary 1 and boundary 2. (e) Schematic of a telecom $TE_{00}$ -to- $TM_{10}$ mode converter consisting of silicon phased array antennas patterned on a $Si_{3}N_{4}$ waveguide. The phase response is due to the optical Mie resonance in the silicon nanorod. (f) Simulated field evolution in the mode converter. (g) Purity of the converted $TM_{10}$ mode as a function of wavelength, showing that the mode converter works over a broad wavelength range. (a) used with permission from [159], (b) used with permission from [153], (c) and (d) used with permission from [160], (e)-(f) used with permission from [161,162].
+
+into the field of integrated photonics where 1D phased array antennas patterned on optical waveguides enable the control of optical power flow and mode coupling in the waveguides. The 1D antenna array introduces a unidirectional phase gradient $d\Phi/dx$ , where $d\Phi$ is the difference in phase response between adjacent antennas that are separated from each other by a subwavelength distance of dx. The phase gradient is equivalent to a unidirectional effective wavevector $\Delta k$ along the waveguide, which leads to directional coupling of waveguide modes. That is, optical power couples preferentially from one waveguide mode to a second waveguide mode, whereas optical coupling from the second mode back to the first one is highly inefficient. As a result, the phase matching conditions are greatly relaxed, which enables the demonstration of extremely broadband and robust waveguide mode conversion (figure 25(e-g)) [161,162].
+
+# 7. Active metasurfaces
+
+Active devices and components play a critical role in modern electromagnetic and photonic systems. Ac-
+
+tive control of metamaterials and metasurfaces extends their exotic passive properties by allowing fine resonance tuning to adapt to the operational conditions, and enabling a switchable resonant response, for instance, for signal modulation in communication and imaging. Furthermore, the concentration of optical power in metasurface resonators integrated with optical nonlinear materials can dramatically enhance the nonlinear response, as predicted in Pendry's original work on SRRs $[15]$ . As compared to bulk metamaterials, the planar configuration of metasurfaces facilitates the integration of active functional materials. A variety of functional materials providing tunable refractive indices through thermal excitation, voltage bias, magnetic field, optical pump, or mechanical deformation have been successfully incorporated into metasurfaces. In particular, semiconductors and graphene become the materials of choice for electrically tunable active metasurfaces.
+
+(a)  
+![](images/da9cabca8197183d7950b7d2910f82ac1b8ebae91514e49dcd801b60e61f9251.jpg)
+
+<details>
+<summary>text_image</summary>
+
+37
+3
+5
+8.5
+3
+Au
+Si
+37
+Sapphire
+HV Mag HFW WD TR Det
+20.9μm
+15.0 kV 50250/45.6 μm 11.1 mm 40.1 IFB
+</details>
+
+(c)
+
+![](images/b51a1b1a362277e4829c9958c44a3ea49fd0e6f1271789442be8fec5a89655dd.jpg)
+
+<details>
+<summary>text_image</summary>
+
+gold
+silicon
+sapphire
+20 µm
+</details>
+
+(e)  
+![](images/79c2f407fdd3664aa4ea605b3cbc7541848d6b0a746f1b3b030dc295a392a529.jpg)
+
+<details>
+<summary>text_image</summary>
+
+(e)
+Ground plane
+Polyimide
+SRR array
+Sapphire
+SRR
+Si island
+B
+E
+k
+w
+L
+P
+E
+B
+</details>
+
+![](images/6a459302ba323c425095b0fdf3df0493443b5d99b32d37752410d74110374018.jpg)
+
+<details>
+<summary>line</summary>
+
+| Frequency (THz) | Pump 0 (mW) | Pump 10 (mW) | Pump 20 (mW) | Pump 50 (mW) | Pump 100 (mW) | Pump 200 (mW) | Pump 500 (mW) |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| 0.25 | ~0.88 | ~0.88 | ~0.96 | ~0.80 | ~0.88 | ~0.88 | ~0.88 |
+| 0.50 | ~0.92 | ~0.88 | ~0.92 | ~0.88 | ~0.88 | ~0.88 | ~0.88 |
+| 0.75 | ~0.88 | ~0.82 | ~0.82 | ~0.78 | ~0.78 | ~0.78 | ~0.78 |
+| 1.00 | ~0.48 | ~0.42 | ~0.48 | ~0.52 | ~0.52 | ~0.52 | ~0.52 |
+| 1.25 | ~0.68 | ~0.68 | ~0.68 | ~0.68 | ~0.68 | ~0.68 | ~0.78 |
+| 1.50 | ~0.84 | ~0.72 | ~0.72 | ~0.62 | ~0.62 | ~0.58 | ~0.62 |
+</details>
+
+![](images/e9cca4c3e26d6c9567c8e350f7edc8e596a99e3e9b403c386ac6476fae3b3c4a.jpg)
+
+<details>
+<summary>line</summary>
+
+| Frequency (THz) | Unpumped | 10 mW | 20 mW | 50 mW | 100 mW | 200 mW | 500 mW |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| 0.25 | ~0.92 | ~0.79 | ~0.69 | ~0.47 | ~0.35 | ~0.21 | ~0.11 |
+| 0.5 | ~0.85 | ~0.74 | ~0.62 | ~0.41 | ~0.27 | ~0.15 | ~0.07 |
+| 0.75 | ~0.79 | ~0.69 | ~0.58 | ~0.39 | ~0.25 | ~0.14 | ~0.06 |
+| 1.0 | ~0.70 | ~0.61 | ~0.54 | ~0.38 | ~0.24 | ~0.14 | ~0.06 |
+| 1.25 | ~0.60 | ~0.52 | ~0.48 | ~0.37 | ~0.23 | ~0.13 | ~0.06 |
+| 1.5 | ~0.48 | ~0.42 | ~0.40 | ~0.33 | ~0.21 | ~0.12 | ~0.05 |
+| 1.75 | ~0.38 | ~0.35 | ~0.34 | ~0.30 | ~0.21 | ~0.12 | ~0.05 |
+| 2.0 | ~0.32 | ~0.31 | ~0.31 | ~0.28 | ~0.22 | ~0.14 | ~0.05 |
+</details>
+
+![](images/a8c259be141f2cd487326359f78a5bc2e3509237a8561d3bdb066483274fd94f.jpg)
+
+<details>
+<summary>line</summary>
+
+| Frequency (THz) | 0 mW | 15 mW | 50 mW | 100 mW | 200 mW |
+| --- | --- | --- | --- | --- | --- |
+| 0.4 | ~0.25 | ~0.34 | ~0.37 | ~0.46 | ~0.46 |
+| 0.5 | ~0.25 | ~0.33 | ~0.37 | ~0.46 | ~0.46 |
+| 0.6 | ~0.18 | ~0.33 | ~0.45 | ~0.50 | ~0.50 |
+| 0.7 | ~0.98 | ~0.85 | ~0.73 | ~0.65 | ~0.65 |
+| 0.8 | ~0.20 | ~0.55 | ~0.65 | ~0.72 | ~0.72 |
+| 0.9 | ~0.20 | ~0.35 | ~0.54 | ~0.78 | ~0.82 |
+| 1.0 | ~0.05 | ~0.35 | ~0.54 | ~0.82 | ~0.90 |
+| 1.1 | ~0.10 | ~0.36 | ~0.60 | ~0.86 | ~0.93 |
+| 1.2 | ~0.02 | ~0.45 | ~0.70 | ~0.90 | ~0.94 |
+| 1.3 | ~0.15 | ~0.65 | ~0.82 | ~0.92 | ~0.92 |
+| 1.4 | ~0.65 | ~0.85 | ~0.92 | ~0.95 | ~0.95 |
+| 1.5 | ~0.92 | ~0.98 | ~0.99 | ~0.98 | ~0.98 |
+| 1.6 | ~0.92 | ~0.95 | ~0.95 | ~0.95 | ~0.95 |
+| 1.7 | ~0.80 | ~0.85 | ~0.85 | ~0.85 | ~0.85 |
+| 1.8 | ~0.60 | ~0.70 | ~0.70 | ~0.70 | ~0.70 |
+| 1.9 | ~0.40 | ~0.50 | ~0.50 | ~0.50 | ~0.50 |
+| 2.0 | ~0.12 | ~0.40 | ~0.40 | ~0.40 | ~0.40 |
+</details>
+
+Figure 26. Optically tunable THz metal/semiconductor hybrid metasurfaces. (a) SEM image of an electric SRR unit cell of a frequency tunable THz metasurface. (b) Upon photoexcitation of the silicon bars, the gap capacitance increases, which results in a lower resonance frequency. (c) Optical microscopy image of an ultra broadband THz modulator. (d) Without photoexcitation, the transmission is high at the low frequency side of the Lorentzian resonance of the gold grid; upon photoexcitation of the silicon region, it becomes effectively a wire grating showing low transmission. (e) Schematic (left panel) and optical microscopy image (right panel) of a THz metamaterial absorber consisting of silicon pads integrated at the gaps of SRRs. (f) Photoexcitation dramatically tunes the property from dual-band to a broadband absorption. (a) and (b) used with permission from $[163]$ , (c) and (d) used with permission from $[164]$ , (e) and (f) used with permission from $[165]$ .
+
+# 7.1. Actively switchable and frequency tunable metal/semiconductor hybrid metasurfaces
+
+The conductivity of semiconductors can be increased by orders of magnitude through doping, and thus semiconductors can be converted into plasmonic materials in the infrared and spectral ranges with longer wavelengths. Active tuning of the conductivity can be realized by carrier injection and depletion through photoexcitation and voltage bias. Such a unique capability makes semiconductors ideal materials for integration into metamaterial structures to accomplish active and dynamic functionalities, particularly in the microwave and THz frequency range. Varactor diodes have been widely used to realize frequency tunable and nonlinear response $[166, 167]$ in microwave metasurfaces. At THz frequencies, SRR arrays can be directly fabricated on top of semiconducting substrates such as intrinsic silicon and gallium arsenide, and the resonant response can be tuned through photoexcitation of free charge carriers at the substrate surface $[168]$ , resulting in an ultrafast switching speed $[169]$ . Furthermore, semiconductors can be used as part of the resonant structure. In this case, photoexcitation dynamically modifies the structural geometry of the resonator, enabling switchable or frequency tunable response. As shown in figure 26(a), a pair of silicon bars form a part of the capacitive gap in an electric SRR unit.
+
+cell. Under photoexcitation with near-infrared light, the silicon bars become metallic, which increases the SRR capacitance. Therefore, the frequency of the SRR LC resonance is tuned to a lower frequency with the tuning range of about 20% [163], as shown in figure 26(b). A variety of similar structures were demonstrated, resulting in a blue shift of the resonance frequency [170].
+
+Optically modifying the metasurface geometric structure enables the transition between different types of resonances. In figure 26(c) silicon is integrated at the gaps of a metal patch array that exhibits a dipolar resonance without photoexcitation and allows high transmission below the resonance frequency. Under photoexcitation, the metallic silicon connects the metal patches, effectively forming a metal wire grating that blocks the low frequency THz waves, as shown in figure 26(d), and resulting in ultra broadband THz modulation $[164]$ . Recently, optically tunable THz metamaterial perfect absorbers $[165]$ were demonstrated, as shown in figure 26(e) and (f), where silicon islands are located at the gaps of electric SRRs. Using such an approach, a variety of optical responses can be switched/tuned via photoexcitation, such as the handedness of chiral metasurfaces $[171, 172]$ and plasmonic electromagnetically induced transparency (EIT) $[173]$ .
+
+Semiconducting hybrid metasurfaces feature electrical tuning of resonances via the application of a volt-
+
+(a)  
+![](images/9d52b0955a703c5c60b6a2533d78c86d6adc80417e196457d9429b9564c9e3e5.jpg)
+
+<details>
+<summary>natural_image</summary>
+
+Two 3D architectural diagrams showing layered structures with no visible text or symbols
+</details>
+
+(b)  
+![](images/20d38561cee6f566b8545483797167b3149cb1a2d7db6fc9768732ece2b4c153.jpg)
+
+<details>
+<summary>line</summary>
+
+| Time (ns) | Voltage (mV)::50MHz | Voltage (mV)::100MHz | Voltage (mV)::200MHz |
+| --- | --- | --- | --- |
+| 0 | ~2.4 | ~2.3 | ~2.4 |
+| 5 | ~3.1 | ~2.8 | ~1.1 |
+| 10 | ~1.2 | ~0.7 | ~2.4 |
+| 15 | ~0.4 | ~2.8 | ~1.1 |
+| 20 | ~1.2 | ~0.7 | ~2.4 |
+| 25 | ~2.8 | ~2.8 | ~1.1 |
+| 30 | ~3.1 | ~0.7 | ~2.4 |
+| 35 | ~1.2 | ~2.8 | ~1.1 |
+| 40 | ~0.4 | ~0.7 | ~2.4 |
+| 45 | ~1.2 | ~2.8 | ~1.1 |
+| 50 | ~2.8 | ~1.0 | ~1.0 |
+</details>
+
+![](images/40f65d9448ed105b7d3297d3d0308be85b99109a978cf702bb5b7d941b61c2ae.jpg)
+
+<details>
+<summary>line</summary>
+
+| Time (ns) | Voltage (mV)::500MHz | Voltage (mV)::700MHz | Voltage (mV)::1GHz |
+| --- | --- | --- | --- |
+| 0 | ~1.4 | ~1.2 | ~2.3 |
+| 1 | ~1.1 | ~2.2 | ~1.2 |
+| 2 | ~2.1 | ~1.2 | ~2.3 |
+| 3 | ~1.1 | ~2.3 | ~1.2 |
+| 4 | ~2.1 | ~1.2 | ~2.3 |
+| 5 | ~1.1 | ~2.3 | ~1.2 |
+| 6 | ~2.1 | ~1.2 | ~2.3 |
+| 7 | ~1.1 | ~2.3 | ~1.2 |
+| 8 | ~2.1 | ~1.2 | ~2.3 |
+| 9 | ~1.1 | ~2.3 | ~1.2 |
+| 10 | ~1.9 | ~1.9 | ~2.0 |
+</details>
+
+![](images/0995d2df4cc8efcd614d98c7ae26d85ea8f1c394170d7ea6f3ddecbe4c9c4588.jpg)
+
+<details>
+<summary>text_image</summary>
+
+(c)
+Schottky
+1272 µm
+1 2 3 4
+</details>
+
+![](images/646d62fe3e9b142089bf30ed450e414d043d1734f865d972db90e5c3ea36cf63.jpg)
+
+<details>
+<summary>line</summary>
+
+| Frequency (THz) | Alternate columns biased (Intensity at \(36{}^{\circ}\) (arb. units)) | All columns biased (Intensity at \(36{}^{\circ}\) (arb. units)) |
+| --- | --- | --- |
+| 0.1 | ~10 | ~10 |
+| 0.2 | ~100 | ~100 |
+| 0.3 | ~10 | ~10 |
+| 0.4 | ~1000 | ~20 |
+| 0.5 | ~10 | ~10 |
+| 0.6 | ~1 | ~1 |
+| 0.7 | ~1 | ~1 |
+</details>
+
+(e)  
+![](images/9b32185d130e8ef259108e7a16b5669f2b761b9e4b219b0ba47e44a99d35e1a7.jpg)
+
+<details>
+<summary>natural_image</summary>
+
+Close-up of a square integrated circuit chip with visible traces and a central grid component (no text or symbols)
+</details>
+
+(f)  
+![](images/928df297888bfcbf46a26725bf3cfba657d5efdd2f8781204755c22df70abd54.jpg)
+
+<details>
+<summary>text_image</summary>
+
+Schottky ELCs
+n+ Layer
+Ohmic Ground Plane
+Indium
+Bumps
+Silicon Fanout
+</details>
+
+Figure 27. Electrical modulation of metal/semiconductor hybrid metasurfaces. (a) Schematic of a unit cell of a high-speed THz metasurface modulator based on double-channel heterostructures. (b) Modulation performance at different frequencies. (c) Schematic of an active THz metasurface diffraction grating formed by 32 columns controlled by independent voltage biases, where different colors indicate different voltage biases. (d) Dynamic diffraction is enabled by applying reverse voltage biases to alternate columns. An unprecedented modulation depth of 22 dB is accomplished at the designed operation frequency of 0.4 THz. (e) THz spatial modulator with $8 \times 8$ pixels based on electrically switchable THz metasurface absorbers and used for THz compressive imaging, and (f) the corresponding device schematic consisting of a linked array of metallic resonators making Schottky contacts with an underlying n-doped semiconductor spacer, a metal ground plane serving as the ohmic contact, as well as the accessory structure enabling independent voltage biases to the pixels. (a) and (b) used with permission from [179], (c) and (d) used with permission from [180], (e) and (f) used with permission from [178].
+
+age bias, which is more convenient and practical for applications. The most prominent examples are the integration of varactor diodes for microwaves and Schottky junctions for THz frequencies. The first demonstration of an electrically switchable THz metasurface featured an unprecedented 50% modulation depth $[174]$ , which was further improved to 80% through structural optimization $[175]$ . Together with the causally connected phase modulation (up to 0.55 rad), this device allows broadband THz modulation $[174]$ that can be used to replace a mechanical optical chopper in a lock-in THz detection scheme with modulation speed in the MHz range $[176–178]$ , limited either by the large device area accompanied by high stray capacitance or parasitic capacitance from the bonding electrodes and wires. Very recently, GHz electronic modulation speed has been demonstrated by using double-channel heterostructures supporting nanoscale 2DEGs with high carrier concentration and mobility $[179]$ , shown in figure 27(a). Through designing a composite hybrid metasurface structure to reduce the stray capacitance, 1 GHz modulation speed, 85% modulation depth (figure 27(b)), and a phase shift of 1.19 rad were experimentally realized during real-time dynamic tests. Furthermore, a wireless free space modulation THz communication system based on this external THz modulator was tested using 0.2 Gbps eye patterns. This accomplishment opens an avenue toward the development of high performance THz wireless communication and imaging systems.
+
+In recent work, an electrically driven THz metasurface active diffraction grating was demonstrated to realize background-free THz modulation with an unprecedented 22 dB of dynamic range $[180]$ . Each “grating finger” consists of an array of electrically connected and switchable SRRs forming a column that is controlled by an independent voltage bias, as shown in figure 27(c). The diffractive metasurface grating is created by applying a voltage bias to alternate columns within the 32-column metasurface structure, resulting in a frequency dependent diffraction angle for the incident broadband THz radiation. At the metasurface resonance frequency of 0.4 THz, the diffraction is strongest because of the largest transmission contrast between two neighboring columns. However, when the same voltage bias is applied to each of the columns, the structure behaves as a uniform metasurface with no observable diffraction. Therefore, application of an AC voltage to alternate columns results in background-free diffractive modulation of the incident THz radiation, as shown in figure 27(d).
+
+Spatial light modulators have been realized by pixelating the metasurface for independent control of reflection, transmission, or their phase. A prototype THz metasurface spatial light modulator with $4 \times$
+
+4 pixels was realized to demonstrate reconfigurable interference patterns of double slits $[181]$ . THz metasurface spatial light modulators with a larger number of pixels are possible, although the increasing number of electrical connecting wires makes them more complicated. One solution to this problem is a reflection-mode metasurface spatial modulator based on an electrically tunable metamaterial absorber structure $[178]$ . As shown in figure 27(f), a linked array of resonators and an underlying semiconductor layer create Schottky junctions, and a metal ground plane serves as the ohmic contact. Application of a reverse voltage bias enables tuning the frequency of the resonant absorption, with modulation speeds up to 10 MHz. This type of THz spatial modulators based on metamaterial absorbers, shown in figure 27(e), have been recently successfully employed in THz compressive imaging $[182]$ .
+
+# 7.2. Graphene hybrid metasurfaces
+
+Except for fabrication of metallic metasurface structures directly on a substrate such as those shown in figure 27(a) and (c), integration of crystalline semiconductor films or islands into the critical regions of more complex metasurfaces (e.g., the structure shown in figure 26 and figure 27(f) as well as other few-layer metasurfaces) poses significant fabrication challenges [186] mainly due to the requirement of nanolithography or transferring fragile semiconductor thin films. In this sense, the excellent mechanical properties and the tunable carrier density of graphene make it an excellent material to enable active metasurfaces [187]. Graphene has largely tunable optical conductivity in the mid-infrared and THz frequency ranges. The doping of graphene can be adjusted through changing the bias voltage by a factor of 10 at room temperature, which leads to a large change in its sheet conductivity $\sigma$ and therefore the in-plane electric permittivity $\epsilon_{\parallel} = 1 + i\sigma /(\epsilon_0\omega t)$ , where $t = 0.33\mathrm{nm}$ is the thickness of single-layer graphene.
+
+The resonant response of metasurfaces is of particular importance to enhance interactions between atomically thin graphene sheets and mid-infrared and THz radiation. Metallic plasmonic antennas are able to capture light from free space and concentrate optical energy into subwavelength spots. The electric field at these spots can be two to three orders of magnitude larger than the incident field. By placing graphene in the hot spots created by metallic plasmonic antennas and by tuning the optical conductivity of graphene, one can switch the resonance or tune the resonance frequency of the composite over a wide range. In the THz frequency range, intraband transitions in graphene sheets have been used to demonstrate broadband
+
+![](images/0caf85c53a2bb584c542653d8d5a28eb8c9268bfb556898997e5e22d798991ec.jpg)  
+Figure 28. Electrically tunable graphene-based metasurfaces. (a) Schematic of an ultrathin mid-infrared modulator based on a tunable metasurface absorber. (b) SEM image of the metasurface absorber. Inset: a zoomed-in view of a portion of the device. (c) Measured reflection spectra (normalized to the reflection spectrum of an aluminum mirror) of the metasurface absorber in (b) at different gate voltages $|V_{G} - V_{CNP}|$ , where $V_{CNP}$ is the gate voltage when the concentrations of electrons and holes in the graphene sheet are equal, i.e., charge neutral point (CNP). (d) SEM image of a metasurface structure exhibiting dual Fano resonances. (e) Average near-field intensity enhancement $\eta$ on graphene surface. Insets: spatial distribution of $\eta$ inside the gap for the two Fano resonances. (f) Measured reflection spectra of the device in (d) as a function of the Fermi energy. (g) Schematic of a metasurface modulator based on a graphene Salisbury screen. The inset illustrates the device with the optical waves at the resonance condition. (h) Change in absorption with respect to the absorption at CNP in 40-nm-wide graphene nanoapertures at various doping levels. The solid black curve corresponds to bare (unpatterned) graphene. The inset: AFM image of graphene nanoapertures with 40 nm width. (a)-(c) used with permission from [183], (d)-(f) used with permission from [184], (g) and (h) used with permission from [185].
+
+electrical modulation [188], and patterned graphene structures have been shown to exhibit resonant plasmonic response [189, 190]. Integrating graphene into metallic resonators has enabled the demonstration of THz metasurface electrical modulators [191–193].
+
+Mid-infrared metasurfaces with electrically tunable spectral properties have been experimentally demonstrated by controlling the carrier density of graphene [194]. Optimizing optical antenna designs has improved both the frequency tuning range and the modulation depth [195]. In figure 28(a), the upper metasurface layer is separated from a back aluminum mirror by a thin aluminum oxide film. Such a reflect-array structure exhibits nearly perfect absorption [183]. That is, at the OFF state the reflection is nearly zero, and the frequency at which near-zero reflection occurs can be tuned by applying a voltage bias that modifies the dispersion of the top graphene-antenna array (figure 28(c)). This approach provides a modulation speed in the tens of MHz range and an optical modulation depth close to $100\%$ with the latter defined as $1 - R_{min}(\lambda) / R_{max}(\lambda)$ where $R_{min}(\lambda)$ and $R_{max}(\lambda)$ are the minimum and maximum achievable reflectivity at
+
+a certain wavelength $\lambda$ [183].
+
+A narrow spectral width is essential for realizing a high modulation depth based on resonance frequency tuning. For this purpose one may integrate graphene into metasurfaces that exhibit high Q-factor Fano resonances, such as the one shown in figure 28(d), which consists of an array of connected dipole and monopole resonators fabricated on top of a thin silicon dioxide layer on a silicon substrate $[184]$ . This metasurface structure exhibits double plasmonic electromagnetically induced transparency (EIT) as illustrated by the two near-field intensity enhancement peaks in figure 28(e) and two reflection minima in figure 28(f). The graphene- $SiO_{2}$ -silicon structure also enables back-gating to tune the graphene carrier density, which consequently tunes the Fano resonances (figure 28(f)). At a specific wavelength, it results in high reflection “ON” and low reflection “OFF” states with an experimentally measured modulation depth up to 90%, though the insertion loss of 81% is still rather high and the bandwidth is also rather small (a few percent of the operational wavelength) $[184]$ . Phase modulation has been also shown recently in
+
+a similar graphene hybrid metasurface in the mid-infrared, which can be potentially used for motion sensing and tunable waveplates [196].
+
+Electrically tunable metasurfaces can be made of structured graphene sheets without utilizing metallic plasmonic antennas. Figure 28(g) shows a reflect-array mid-infrared modulator consisting of graphene nanoapertures (i.e., voids cut into a graphene sheet) separated from a metallic back mirror by a thin film of $Si_{3}N_{4}$ [197]. The width of the nanoapertures is chosen to be in the range of 20-60 nm, so that incident mid-infrared light can excite plasmonic resonances in the nanoapertures, leading to strongly enhanced optical absorption of up to 25%. As the bias voltage changes the carrier doping of the perforated graphene sheet, the plasmonic resonances shift, giving rise to tunable amplitude and spectral position of the absorption peaks (figure 28(h)).
+
+# 7.3. Other resonance switchable and frequency tunable metasurfaces
+
+While electrically tunable metasurfaces integrated with semiconductors and graphene are of utmost importance in applications, there are a variety of other functional materials and structures that have been successfully used to realize active metasurfaces. When a THz metallic SRR array was fabricated directly on top of a strontium titanate (STO) substrate (a phase transition material), the resonance frequency experiences a red-shift with decreasing temperature, due to the increasing refractive index of the STO substrate, although it suffers from significant insertion loss due to the high refractive index of the STO substrate [199]. Vanadium dioxide (VO₂) exhibits thermally driven insulator-to-metal phase transition and has attracted great interest in realizing thermally active metasurfaces at THz and infrared frequencies [200–205]. The hysteresis of its phase transition has been utilized to demonstrate metasurface memory devices [201]. The resonance of metasurfaces based on VO₂ can be also switched through the application of a voltage bias [198]. In the latter case, a thin layer of ionic gel was applied on the surface of the metasurface (figure 29(a)). Application of positive (negative) voltage selectively tunes the metasurface resonance into the “OFF” (“ON”) state by inducing the VO₂ film into a more conductive (insulating) state. In particular, a positive voltage drives the following electrochemical reaction: VO₂ + 2x e⁻ → VO₂₋ₓ + x O²⁻, so that VO₂ goes across the boundary between the insulating and metallic states following the pink solid arrow in figure 29(b). As a result, application of positive voltages damps the SRR resonance, with 3 volts yielding complete suppression of the resonance (figure 29(c)).
+
+![](images/6c929a5fdf6b31fb52047ac597b4418ef24b83aa0cab916f9154cd8054c10386.jpg)  
+Figure 29. (a) Schematic showing electrolyte gating of $VO_{2}$ -based metasurfaces. (b) Phase diagram of $VO_{2}$ . (c) Voltage dependent THz transmission spectra of the device in (a) at 315K. Insets: photos of gold SRRs sitting on $VO_{2}$ before the ionic gel is applied. Used with permission from [198].
+
+Liquid crystals can be also conveniently integrated with metasurface structures, and help realize electrically tunable spectral properties when the refractive index of liquid crystals is adjusted $[206, 207]$ . The frequency tuning range is, however, quite limited and the operation speed is slow. THz superconducting metasurfaces consisting of resonant elements made of superconducting films instead of the typically used metals have shown outstanding switching and frequency tuning behaviors via thermal control $[208–211]$ or photoexcitation $[212]$ , although this only applies to microwave and THz frequencies, limiting the applications of active superconducting metasurfaces. Last but not least, integration of micro-electro-mechanical systems (MEMS) into metasurfaces has enabled reconfig-
+
+urable resonances by changing the geometry of the resonant elements through thermal or electrostatic actuation [213-217].
+
+# 7.4. Nonlinear metasurfaces
+
+![](images/8836b65160f20d2e96e917fc274e91259d1a8c357b66dd0e0752bb3195f70440.jpg)  
+Figure 30. (a) Top panel: optical image of an array of gold electric SRRs fabricated on top of a $VO_{2}$ film showing THz-field-induced damage illustrated by the black spots at the split gaps. The dashed blue circle approximates the THz beam waist, and the red curve approximates the THz intensity profile. Bottom panels: SEM images of a single SRR show that $VO_{2}$ is damaged by the vertically polarized THz field, with an expanded view of damage at the edge of the THz beam (right top) and near the beam centre (right bottom). (b) Experimental data showing incident field-dependent nonlinear transmission spectra of SRRs on $VO_{2}$ at 324 K, for in-gap fields ranging from 0.3 to 3.3 MV/cm. Used with permission from [218].
+
+The abilities of metasurfaces to promote light-matter interaction and manipulate local optical polarizations are ideally suited to enhance nonlinear optical effects. This is particularly significant in the THz frequency range due to the difficulties in generating high-power THz radiation. The concentration of incident THz waves relaxes the requirement of a strong THz source, and further reveals the ultrafast dynamics of electronic responses initiated by the intense THz pulses. An excellent example is the THz-field-induced insulator-to-metal transition in metal/VO $_2$ hybrid metasurfaces, where an array of electric SRRs were fabricated on top of a VO $_2$ film (figure 30(a)) [218]. It was shown that the transmission spectra depend on the incident field strength, as shown in figure 30(b), due to the phase transition of VO $_2$ that is initiated by Poole-Frenkel electron liberation, followed by lattice equilibration on a picosecond timescale. The incident few hundreds kV/cm THz field is resonantly enhanced to the MV/cm level within the split gap, which is then sufficient to induce irreversible damage of the VO $_2$ film, as shown in figure 30(a). Such a methodology has been further applied to investigate nonlinear metasurfaces integrated with semiconductors such as gallium arsenide and indium arsenide [219, 220], where the electric field induces intervalley scattering or impact ionization, resulting in a reduced carrier mobility or increased carrier density, thereby either damping or strengthening the metasurface resonant response. Strong THz nonlinear response was also observed in superconducting metasurfaces under intense THz radiation $[221,222]$ . Although the energy of a THz photon is well below that required to directly break a Cooper pair upon absorption and the applied THz pulses do not significantly raise the sample temperature, the transmission measurements reveal significant field-strength-dependent transmission spectra at various temperatures. It would be expected that the intense THz field can accelerate electrons that gain sufficiently high kinetic energy to induce Cooper pair breaking, which damps the resonance similar to the cases of resonance switching and frequency tuning under thermal and optical excitation.
+
+Conventionally, the phase matching condition in nonlinear processes, such as second harmonic generation (SHG), has to be satisfied in bulk nonlinear crystals to achieve efficient nonlinear optical generation. Under the condition of perfect phase matching, nonlinearly generated optical signals constructively build up, and optical power is continuously transferred from the pump(s) to the nonlinear optical signal. Metasurfaces greatly relax the requirement for phase matching as nonlinear processes occur within metasurfaces that have significantly reduced thicknesses. Giant second-harmonic (SH) response (figure 31(a-c)) has been experimentally demonstrated in plasmonic metasurfaces integrated with nonlinear media [223]. Specifically, InGaAs/AlInAs multiple quantum wells were used as the nonlinear media, which exhibit giant and electrically tunable nonlinear coefficients in the mid-infrared [225–227]. The plasmonic metasurfaces were designed to not only enhance the local fields of both the pump and SH signal, but also to manipulate the near-field polarization, as the relevant field components involved in the harmonic generation are the ones normal to the quantum wells (due to the selection rules for intersubband transitions within quantum wells [228]). The nonlinear metasurfaces achieved a nonlinear conversion efficiency of $\sim2\times10^{-6}$ using a pump intensity of only $15\ kW/cm^{2}$ [223], corresponding to an effective second-order nonlinear coefficient of $\chi^{(2)}\sim30\ nm/V$ , about three orders of magnitude larger than that of $LiNbO_{3}$ . Even larger $\chi^{(2)}\sim250\ nm/V$ has been experimentally demonstrated in a nonlinear metasurface consisting of an array of SRRs and InGaAs/AlInAs multiple quantum wells (figure 31(d,e)) [224]. The two plasmonic resonances of the SRRs enhance, respectively, the pump and SH signal (figure 31(d)).
+
+These demonstrations have followed the original proposal of using SRRs by Pendry in 1999, where the resonance would localize electromagnetic energy within the small split-gaps and dramatically enhance nonlin-
+
+![](images/1858fd9c5bd78653185c802819f41f9b1e0da01c9cd922090a273c462e1819f1.jpg)  
+Figure 31. (a) Unit cell of the SHG metasurface. Dimensions of the gold nanocross are given in nm, and the unit cell has a dimension of $1000 \, nm \times 1300 \, nm$ . (b) Conduction band diagram of one period of an $In_{0.53}Ga_{0.47}As/Al_{0.48}In_{0.52}As$ coupled quantum well structure designed as the nonlinear media for highly efficient SHG. The moduli squared of the electron wavefunctions for subbands 1, 2 and 3 are shown and labelled accordingly. Transitions between pairs of electron subbands are marked with double-headed red arrows, and the values of the transition energies ( $E_{21}$ and $E_{32}$ ) and dipole moments ( $Z_{21}$ , $Z_{32}$ and $Z_{31}$ ) are shown next to each arrow. (c) SHG from metasurfaces based on (a) and (b). Shown are SH peak power (left axis) and intensity (right axis) as a function of pump peak power squared (bottom axis) or peak intensity squared (top axis) at a pump wavenumber of $1240 \, cm^{-1}$ for different input/output polarization combinations. (d) Left panel: Schematic of a metasurface consisting of SRRs on top of a stack of MQWs. Upper right panel: Top view of one SRR. Lower right panel: Schematic showing the two main resonant modes of the SRR at the pump and SH frequency, respectively. (e) Intensity of the SH signal propagating in the forward and backward directions with respect to the nonlinear metasurface in (d) as a function of pump intensity. (a)-(c) used with permission from [223], (d) and (e) used with permission from [224].
+
+ear response in materials being introduced [15]. Most experimental demonstrations of nonlinear metamaterials have been mainly focused in the microwave frequency range using packaged nonlinear electronic elements, such as varactor diodes, to introduce nonlinearity into the gaps of the metal resonators, resulting in nonlinear functionalities such as bistability [229, 230], resonance tunability [166, 231], and harmonic generation [232, 233]. In the optical frequency regime, in addition to the difficulty in packaging nonlinear materials, it is challenging to fabricate bulk metamaterials consisting of complex three-dimensional nanostructures, and utilize their thickness to enhance nonlinear response. Experimental work has been scarce as compared to its microwave counterpart. One of the focuses has been harmonic generation using single layer metal SRR arrays (tens of nanometer thickness) excited at their magnetic resonance [234, 235], where the nonlinearity is associated with the dynamics of free and bound charges, particularly at the metal surface [236]. This seems to be also responsible for the recently observed broadband THz generation under femtosecond near-infrared laser excitation in an array of gold SRRs [237]. It was also shown that the geometry of resonators, particularly the asymmetry ratio, plays a critical role as it governs the spatial overlap of the resonant modes at the pump and harmonic frequencies $[238]$ . Although the nonlinear coefficients were often enhanced by orders of magnitude compared to common nonlinear crystals, the absolute conversion efficiency is still rather low. Further improvement is non-trivial and cannot be realized by simply stacking multi-layers for larger interaction thickness due to the impedance and propagation phase mismatches.
+
+A step further is the demonstration of nonlinear phased arrays that radiate generated SH signals into different directions depending on their polarization states [239]. In the metasurface structure shown in figure 32(a), the top row of six identical resonators within the unit cell generate a single u-polarized broadside beam, shown in the right panel of figure 32(b), at the SH frequency. In the bottom row of four resonators within the unit cell, the left two resonators have a $\pi$ phase difference as compared to the right two resonators, as the local effective second-order nonlinear coefficient $\chi^{(2)}$ changes sign when the orientation of a SRR rotates by $180^{\circ}$ . Together they generate two v-polarized beams at $\pm 40^{\circ}$
+
+![](images/fff5f2c72dc0a7a74b5ac135b6bdb0c9d10898c52589d90adec4e997cfe6e9f4.jpg)  
+Figure 32. (a) SEM image of a portion of a nonlinear metasurface that radiates SH signal of different polarizations into different directions (i.e., polarizing beam splitter for SH signal). A unit cell of the metasurface is denoted by the red rectangle. (b) Measured far-field profiles for the metasurface in (a) for two orthogonal polarizations of the SH radiation when the pump beam is polarized along the vertical direction. (c) SEM image of a portion of a nonlinear metasurface Fresnel zone plate (FZP) showing mirror inversion of SRRs in adjacent zones that radiate SH waves with opposite phases. Arrows mark the effective $\chi^{(2)}$ direction. (d) Recorded images of SH signal at a distance of Z = 0 and Z = 1 mm from the metasurface in (c). (e) Upper and lower panels are, respectively, simulation and measurement results showing the focusing of SH signal by the FZP (m denotes focusing order). (a) and (b) used with permission from [239], (c)-(e) used with permission from [240].
+
+as shown in the left panel of figure 32(b), where the radiation angles are determined by the period of the metasurface structure. The same effect was used to demonstrate complex wavefront engineering of the SH signal generated from metasurfaces consisting of gold SRRs (figure 32(c-e)) [240]. Here the surface second-order nonlinearity of gold leads to SHG. In experiments a nonlinear Fresnel zone plate (FZP) was demonstrated, which focuses the SH signal to the focal spots of the plate, leading to a large enhancement of the SH intensity.
+
+# 8. Summary and outlook
+
+Metamaterials and metasurfaces have led to the realization of novel electromagnetic properties and functionalities through tailoring subwavelength structures and integrating functional materials. In this paper we have reviewed the recent development of two-dimensional metamaterials – metasurfaces – by introducing the fundamental concepts, physical realization, and their promising applications in the control and manipulation of electromagnetic waves at frequencies ranging from microwave to visible light. One of our focuses is on the creation of an arbitrary phase profile for wavefront control and beam forming using both metallic and dielectric metasurfaces. Another focus is on the few-layer metasurfaces that address the efficiency issue
+
+encountered during the earlier development of metasurfaces. Active and nonlinear metasurfaces represent an important research direction that will greatly expand metasurface functionalities and applications. As a rapidly developing research field that has attracted world wide interest, it would be impossible (and not necessary) to include every aspect of its past success. For instance, we have not included metasurfaces for antireflection coatings $[85, 241]$ , photonic spin Hall effects in metasurfaces $[242]$ and ultrathin invisibility cloaks $[243]$ .
+
+We see a number of promising areas in fundamental research and practical applications where metasurfaces could have an important impact:
+
+(1) Dispersionless flat lenses. Flat lenses that are able to correct chromatic aberration over a broad wavelength range, and reduce spherical aberration, coma, and other monochromatic aberrations, could revolutionize optical instrumentation. Substantially shrinking the complexity and size of optical instruments (e.g., replacing the entire set of compound lenses in a camera lens with a few dispersionless and aberration-corrected flat lenses) seems feasible in view of recent developments of metasurface lenses.  
+(2) Optical modulators and spatial light modulators (SLMs) in the mid-infrared and THz spectral range. The lack of compact and fast modulators and SLMs has been a big challenge that prevents the wide
+
+applications of mid-infrared and THz technology in free-space communications, imaging, LIDAR (light detection and ranging), and homeland security (e.g., remote sensing, surveillance, and navigation in severe environments, such as foggy and dusty weather). Metasurfaces provide an ideal platform to create flat modulators in the mid-infrared and THz regimes as they enable a strong interaction between light and materials with tunable optical properties, and allow for introducing spatially-varying optical response. Strong light-material interactions enabled by metasurfaces allow for reducing the amount of tunable materials used so that one can increase the modulation speed.
+
+(3) Radiative cooling metasurfaces. Metasurfaces that possess exceptional thermoregulatory properties have been an emerging field of research and have the potential to make an important technological impact. Fan and colleagues are pioneering the research on radiative cooling metasurfaces $[244–246]$ , which have strong reflectivity in the solar radiation spectrum and enhanced emissivity in the thermal radiation spectrum. Metasurfaces based on multilayered thin films have demonstrated in experiments passive cooling of objects to a few degrees below the ambient air temperature under direct sunlight $[246]$ . Chen and colleagues recently proposed a fabric that blocks sunlight and provides passive cooling via the transmission of thermal radiation emitted by the human body $[247]$ . It is interesting to note that radiative cooling has always been essential for the survival of animals living in harsh environmental conditions. Yu and co-workers recently reported the thermoregulatory strategies that enable Saharan silver ants to forage in the midday sun on the desert surface where temperatures can reach $70^{\circ}$ C (which is not survivable by their primary predators). It was found that a monolayer of densely packed hairs with triangular cross-sections, in some sense a biological “metasurface”, enhances not only the ant body’s reflectivity in the visible and near-infrared, where solar radiation culminates, but also its emissivity in the mid-infrared $[248]$ . The combined effect enables the ants to minimize absorption from solar radiation, and to efficiently dissipate heat back to the surroundings via blackbody radiation. Animals and plants living in extreme environments could provide us valuable scientific and engineering lessons on optical design and thermal management. In general, by designing the structural hierarchy, compositional heterogeneity, and local anisotropy of metasurface structures, one could create coatings that are optically thin and have desired spectral properties (reflectivity, absorptivity, transmissivity, and emissivity) over an extremely broad electromagnetic spectral range. Such ultra-thin and ultra-broadband metasurfaces will open doors to a variety of new applications, including control
+
+of radiative heat transfer, infrared camouflage and structural coloration.
+
+(4) New material platforms for metasurfaces. Investigations of materials with low losses, tunability, high melting point, and CMOS compatibility for metamaterials and metasurfaces have been very active in recent years. Transition-metal nitrides such as TiN show comparable optical properties as gold in the visible and infrared but have much higher melting points $[249–251]$ , a property that can be explored for metasurface applications involving high optical intensity. Transparent conducting oxides (TCOs) such as indium-tin-oxide enable one to control the spectral location of the epsilon-near-zero point, which is associated with enhanced optical near-fields; the resulting strong interaction between light and TCOs can be exploited for optical modulation $[252, 253]$ and nonlinear optics. Phase-change materials such as chalcogenide alloys that have been used in rewritable CDs, DVDs, and Blu-ray discs, can be switched between the amorphous and crystalline states by laser or electrical current pulses with controlled duration and intensity $[254, 255]$ . This material system has recently been used to demonstrate all-optical, non-volatile, metasurface switch $[256]$ , and high-resolution solid-state displays $[257]$ . $SmNiO_{3}$ , a prototypical phase-transition perovskite nickelate, exhibits non-volatile and reversible large refractive index changes over an ultra-broad spectral range, from the visible to the long-wavelength mid-infrared. The super broadband performance is due to strong electron correlation effects $[258]$ , and this new mechanism can be exploited to create a variety of active photonic devices.
+
+# Acknowledgments
+
+H.T.C acknowledges support in part from the Los Alamos National Laboratory LDRD Program. N.Y. acknowledges support from NSF (grant ECCS-1307948), the AFOSR Multidisciplinary University Research Initiative program (grant FA9550-14-1-0389), and DARPA Young Faculty Award (grant D15AP00111). This work was performed, in part, at the Center for Integrated Nanotechnologies, a U.S. Department of Energy, Office of Basic Energy Sciences Nanoscale Science Research Center operated jointly by Los Alamos and Sandia National Laboratories. Los Alamos National Laboratory, an affirmative action/equal opportunity employer, is operated by Los Alamos National Security, LLC, for the National Nuclear Security Administration of the U.S. Department of Energy under Contract No. DE-AC52-06NA25396.
+
+# References
+
+[1] Wu L A, Long G L, Gong Q and Guo G C 2015 Optics in ancient China AAPPS Bulletin 25 6–10  
+[2] Pendry J B, Schurig D and Smith D R 2006 Controlling electromagnetic fields Science 312 1780–1782  
+[3] Leonhardt U 2006 Optical conformal mapping Science 312 1777–1780  
+[4] Cai W and Shalaev V 2010 Optical Metamaterials: Fundamentals and Applications (Heidelberg: Springer-Verlag)  
+[5] Engheta N and Ziolkowski R W 2006 Metamaterials: Physics and Engineering Explorations (Wiley-IEEE Press)  
+[6] Smith D R, Padilla W J, Vier D C, Nemat-Nasser S C and Schultz S 2000 Composite medium with simultaneously negative permeability and permittivity Physical Review Letters 84 4184–4187  
+[7] Shelby R A, Smith D R and Schultz S 2001 Experimental verification of a negative index of refraction Science 29277–79  
+[8] Pendry J 2000 Negative refraction makes a perfect lens Physical Review Letters 85 3966–3969  
+[9] Fang N, Lee H, Sun C and Zhang X 2005 Sub-diffraction-limited optical imaging with a silver superlens Science 308 534–537  
+[10] Schurig D, Mock J J, Justice B J, Cummer S A, Pendry J B, Starr A F and Smith D R 2006 Metamaterial electromagnetic cloak at microwave frequencies Science 314 977–980  
+[11] Soukoulis C M and Wegener M 2011 Past achievements and future challenges in the development of three-dimensional photonic metamaterials Nature Photonics 5 523–530  
+[12] Yu N F, Genevet P, Kats M A, Aieta F, Tetienne J P, Capasso F and Gaburro Z 2011 Light propagation with phase discontinuities: generalized laws of reflection and refraction Science 334 333–337  
+[13] Ni X J, Emani N K, Kildishev A V, Boltasseva A and Shalaev V M 2012 Broadband light bending with plasmonic nanoantennas Science 335 427  
+[14] Sun S, He Q, Xiao S, Xu Q, Li X and Zhou L 2012 Gradient-index meta-surfaces as a bridge linking propagating waves and surface waves Nature Materials 11 426–431  
+[15] Pendry J B, Holden A J, Robbins D J and Stewart W J 1999 Magnetism from conductors and enhanced nonlinear phenomena IEEE Transactions on Microwave Theory and Techniques 47 2075–2084  
+[16] Chen H T, O'Hara J F, Taylor A J, Averitt R D, Highstrete C, Lee M and Padilla W J 2007 Complementary planar terahertz metamaterials Optics Express 15 1084–1095  
+[17] Munk B A 2000 Frequency Selective Surfaces: Theory and Design (New York: John Wiley & Sons)  
+[18] Bharadwaj P, Deutsch B and Novotny L 2009 Optical antennas Advances in Optics and Photonics 1 438–483  
+[19] Novotny L and van Hulst N 2011 Antennas for light Nature Photonics 5 83–90  
+[20] Svirko Y, Zheludev N and Osipov M 2001 Layered chiral metallic microstructures with inductive coupling Applied Physics Letters 78 498–500  
+[21] Zou L, Withayachumnankul W, Shah C M, Mitchell A, Bhaskaran M, Sriram S and Fumeaux C 2013 Dielectric resonator nanoantennas at visible frequencies Optics Express 21 1344–1352  
+[22] Walther B, Helgert C, Rockstuhl C, Setzpfandt F, Eilenberger F, Kley E B, Lederer F, Tuennermann A and Pertsch T 2012 Spatial and spectral light shaping with metamaterials Advanced Materials 24 6300–6304  
+[23] Lin J, Mueller J P B, Wang Q, Yuan G, Antoniou  
+N, Yuan X C and Capasso F 2013 Polarization-controlled tunable directional coupling of surface plasmon polaritons Science 340 331–334  
+[24] Cheng H, Liu Z, Chen S and Tian J 2015 Emergent functionality and controllability in few-layer metasurfaces Advanced Materials 27 5410–5421  
+[25] Holloway C, Kuester E F, Gordon J, O'Hara J, Booth J and Smith D 2012 An overview of the theory and applications of metasurfaces: the two-dimensional equivalents of metamaterials IEEE Antennas and Propagation Magazine 54 10–35  
+[26] Yu N, Genevet P, Aieta F, Kats M, Blanchard R, Aoust G, Tetienne J P, Gaburro Z and Capasso F 2013 Flat optics: controlling wavefronts with optical antenna metasurfaces IEEE Journal of Selected Topics in Quantum Electronics 19 4700423  
+[27] Kildishev A V, Boltasseva A and Shalaev V M 2013 Planar photonics with metasurfaces Science 339 1232009  
+[28] Yu N F and Capasso F 2014 Flat optics with designer metasurfaces Nature Materials 13 139–150  
+[29] Walia S, Shah C M, Gutruf P, Nili H, Chowdhury D R, Withayachumnankul W, Bhaskaran M and Sriram S 2015 Flexible metasurfaces and metamaterials: a review of materials and fabrication processes at micro- and nano-scales Applied Physics Reviews 2 011303  
+[30] Minovich A E, Miroshnichenko A E, Bykov A Y, Murzina T V, Neshev D N and Kivshar Y S 2015 Functional and nonlinear optical metasurfaces Laser & Photonics Reviews 9 195–213  
+[31] Genevet P and Capasso F 2015 Holographic optical metasurfaces: a review of current progress Reports on Progress in Physics 78 024401  
+[32] Aieta F, Genevet P, Yu N, Kats M A, Gaburro Z and Capasso F 2012 Out-of-plane reflection and refraction of light by anisotropic optical antenna metasurfaces with phase discontinuities Nano Letters 12 1702–1706  
+[33] Yu N, Aieta F, Genevet P, Kats M A, Gaburro Z and Capasso F 2012 A broadband, background-free quarter-wave plate based on plasmonic metasurfaces Nano Letters 12 6328–6333  
+[34] Kats M A, Genevet P, Aoust G, Yu N, Blanchard R, Aieta F, Gaburro Z and Capasso F 2012 Giant birefringence in optical antenna arrays with widely tailorable optical anisotropy Proceedings of the National Academy of Sciences 109 12364–12368  
+[35] Zhang X Q, Tian Z, Yue W S, Gu J Q, Zhang S, Han J G and Zhang W L 2013 Broadband terahertz wave deflection based on C-shape complex metamaterials with phase discontinuities Advanced Materials 25 4567–4572  
+[36] Sun S, Yang K Y, Wang C M, Juan T K, Chen W T, Liao C Y, He Q, Xiao S, Kung W T, Guo G Y, Zhou L and Tsai D P 2012 High-efficiency broadband anomalous reflection by gradient meta-surfaces Nano Letters 12 6223–6229  
+[37] Farmahini-Farahani M and Mosallaei H 2013 Birefringent reflectarray metasurface for beam engineering in infrared Optics Letters 38 462–464  
+[38] Pozar D M, Targonski S D and Syrigos H 1997 Design of millimeter wave microstrip reflectarrays IEEE Transactions on Antennas and Propagation 45 287–296  
+[39] Gagnon N, Petosa A and McNamara D 2013 Research and development on phase-shifting surfaces (PSSs) IEEE Antennas and Propagation Magazine 55 29–48  
+[40] Pancharatnam S 1956 Generalized theory of interference, and its applications - Part I. Coherent pencils Proceedings of the Indian Academy of Sciences - Section A 44 247-262  
+[41] Berry M V 1984 Quantal phase factors accompanying adiabatic changes Proceedings of the Royal Society of  
+London A 392 45–57  
+[42] Hasman E, Biener G, Niv A and Kleiner V 2005 Space-variant polarization manipulation (Progress in Optics vol 47) (Elsevier)  
+[43] Menzel C, Rockstuhl C and Lederer F 2010 Advanced Jones calculus for the classification of periodic metamaterials Physical Review A 82 053811  
+[44] Armitage N P 2014 Constraints on Jones transmission matrices from time-reversal invariance and discrete spatial symmetries Physical Review B 90 035135  
+[45] Kang M, Feng T, Wang H T and Li J 2012 Wave front engineering from an array of thin aperture antennas Optics Express 20 15882–15890  
+[46] Huang L, Chen X, Mühlenbernd H, Li G, Bai B, Tan Q, Jin G, Zentgraf T and Zhang S 2012 Dispersionless phase discontinuities for controlling light propagation Nano Letters 12 5750–5755  
+[47] Li J, Chen S, Yang H, Li J, Yu P, Cheng H, Gu C, Chen H T and Tian J 2015 Simultaneous control of light polarization and phase distributions using plasmonic metasurfaces Advanced Functional Materials 25 704–710  
+[48] Luo W, Xiao S, He Q, Sun S and Zhou L 2015 Photonic spin Hall effect with nearly 100% efficiency Advanced Optical Materials 3 1102–1108  
+[49] Bomzon Z, Kleiner V and Hasman E 2001 Pancharatnam–Berry phase in space-variant polarization-state manipulations with subwavelength gratings Optics Letters 26 1424–1426  
+[50] Bomzon Z, Biener G, Kleiner V and Hasman E 2002 Space-variant Pancharatnam-Berry phase optical elements with computer-generated subwavelength gratings Optics Letters 27 1141–1143  
+[51] Li G, Kang M, Chen S, Zhang S, Pun E Y B, Cheah K W and Li J 2013 Spin-enabled plasmonic metasurfaces for manipulating orbital angular momentum of light Nano Letters 13 4148–4151  
+[52] Pfeiffer C and Grbic A 2013 Metamaterial Huygens' surfaces: tailoring wave fronts with reflectionless sheets Physical Review Letters 110 197401  
+[53] Pfeiffer C, Emani N K, Shaltout A M, Boltasseva A, Shalaev V M and Grbic A 2014 Efficient light bending with isotropic metamaterial Huygens' surfaces Nano Letters 14 2491–2497  
+[54] Monticone F, Estakhri N M and Alù A 2013 Full control of nanoscale optical transmission with a composite metascreen Physical Review Letters 110 203903  
+[55] Aieta F, Genevet P, Kats M A, Yu N, Blanchard R, Gaburro Z and Capasso F 2012 Aberration-free ultrathin flat lenses and axicons at telecom wavelengths based on plasmonic metasurfaces Nano Letters 12 4932–4936  
+[56] Grady N K, Heyes J E, Chowdhury D R, Zeng Y, Reiten M T, Azad A K, Taylor A J, Dalvit D A R and Chen H T 2013 Terahertz metamaterials for linear polarization conversion and anomalous refraction Science 340 1304–1307  
+[57] Li X, Xiao S, Cai B, He Q, Cui T J and Zhou L 2012 Flat metasurfaces to focus electromagnetic waves in reflection geometry Optics Letters 37 4940–4942  
+[58] Ni X, Ishii S, Kildishev A V and Shalaev V M 2013 Ultra-thin, planar, Babinet-inverted plasmonic metalenses Light Science & Applications 2 e72  
+[59] Jiang X Y, Ye J S, He J W, Wang X K, Hu D, Feng S F, Kan Q and Zhang Y 2013 An ultrathin terahertz lens with axial long focal depth based on metasurfaces Optics Express 21 30030–30038  
+[60] Memarzadeh B and Mosallaei H 2011 Array of planar plasmonic scatterers functioning as light concentrator Optics Letters 36 2569–2571  
+[61] Chen X, Huang L, Mühlenbernd H, Li G, Bai B, Tan Q, Jin G, Qiu C W, Zhang S and Zentgraf T 2012 Dual-polarity plasmonic metalens for visible light Nature Communications 3 1198  
+[62] Pors A, Nielsen M G, Eriksen R and Bozhevolnyi S I 2013 Broadband focusing flat mirrors based on plasmonic gradient metasurfaces Nano Letters 13 829–834  
+[63] Khorasaninejad M, Aieta F, Kanhaiya P, Kats M A, Genevet P, Rousso D and Capasso F 2015 Achromatic metasurface lens at telecommunication wavelengths Nano Letters 15 5358–5362  
+[64] Pfeiffer C and Grbic A 2014 Controlling vector Bessel beams with metasurfaces Physical Review Applied 2(4) 044012  
+[65] Genevet P, Yu N, Aieta F, Lin J, Kats M A, Blanchard R, Scully M O, Gaburro Z and Capasso F 2012 Ultra-thin plasmonic optical vortex plate based on phase discontinuities Applied Physics Letters 100 013101  
+[66] Ni X, Kildishev A V and Shalaev V M 2013 Metasurface holograms for visible light Nature Communications 4 2807  
+[67] Zheng G, Mühlenbernd H, Kenney M, Li G, Zentgraf T and Zhang S 2015 Metasurface holograms reaching 80% efficiency Nature Nanotechnology 10 308–312  
+[68] Strikwerda A C, Fan K, Tao H, Pilon D V, Zhang X and Averitt R D 2009 Comparison of birefringent electric split-ring resonator and meanderline structures as quarter-wave plates at terahertz frequencies Optics Express 17 136–149  
+[69] Khoo E H, Li E P and Crozier K B 2011 Plasmonic wave plate based on subwavelength nanoslits Optics Letters 36 2498–2500  
+[70] Zhao Y and Alù A 2011 Manipulating light polarization with ultrathin plasmonic metasurfaces Physical Review B 84 205428  
+[71] Cong L Q, Cao W, Tian Z, Gu J Q, Han J G and Zhang W L 2012 Manipulating polarization states of terahertz radiation using metamaterials New Journal of Physics 14 115013  
+[72] Zhu L, Meng F Y, Dong L, Fu J H, Zhang F and Wu Q 2013 Polarization manipulation based on electromagnetically induced transparency-like (EIT-like) effect Optics Express 21 32099–32110  
+[73] Wang D, Gu Y, Gong Y, Qiu C W and Hong M 2015 An ultrathin terahertz quarter-wave plate using planar babinet-inverted metasurface Optics Express 23 11114-11122  
+[74] Chin J Y, Lu M Z and Cui T J 2008 Metamaterial polarizers by electric-field-coupled resonators Applied Physics Letters 93 251903  
+[75] Li T, Wang S M, Cao J X, Liu H and Zhu S N 2010 Cavity-involved plasmonic metamaterial for optical polarization conversion Applied Physics Letters 97 261113  
+[76] Peralta X G, Smirnova E I, Azad A K, Chen H T, Taylor A J, Brener I and O'Hara J F 2009 Metamaterials for THz polarimetric devices Optics Express 17 773–783  
+[77] Young L, Robinson L A and Hacking C A 1973 Meanderline polarizer IEEE Transactions on Antennas and Propagation 21 376–378  
+[78] Hao J M, Yuan Y, Ran L X, Jiang T, Kong J A, Chan C T and Zhou L 2007 Manipulating electromagnetic wave polarizations by anisotropic metamaterials Physical Review Letters 99 063908  
+[79] Pors A, Nielsen M G, Valle G D, Willatzen M, Albrektsen O and Bozhevolnyi S I 2011 Plasmonic metamaterial wave retarders in reflection by orthogonally oriented detuned electrical dipoles Optics Letters 36 1626–1628  
+[80] Wang F, Chakrabarty A, Minkowski F, Sun K and Wei Q H 2012 Polarization conversion with elliptical patch  
+nanoantennas Applied Physics Letters 101 023101  
+[81] Watts C M, Liu X L and Padilla W J 2012 Metamaterial electromagnetic wave absorbers Advanced Materials 24 Op98–Op120  
+[82] Chen H T 2012 Interference theory of metamaterial perfect absorbers Optics Express 20 7165–7172  
+[83] Sun W J, He Q O, Hao J M and Zhou L 2011 A transparent metamaterial to manipulate electromagnetic wave polarizations Optics Letters 36 927–929  
+[84] Zhou L, Wen W J, Chan C T and Sheng P 2005 Electromagnetic-wave tunneling through negative-permittivity media with high magnetic fields Physical Review Letters 94 243905  
+[85] Chen H T, Zhou J F, O'Hara J F, Chen F, Azad A K and Taylor A J 2010 Antireflection coating using metamaterials and identification of its mechanism Physical Review Letters 105 073901  
+[86] Cong L Q, Xu N N, Gu J Q, Singh R, Han J G and Zhang W L 2014 Highly flexible broadband terahertz metamaterial quarter-wave plate Laser & Photonics Reviews 8 626–632  
+[87] Li Y F, Zhang J Q, Qu S B, Wang J F, Zheng L, Pang Y Q, Xu Z and Zhang A X 2015 Achieving wide-band linear-to-circular polarization conversion using ultra-thin bilayered metasurfaces Journal of Applied Physics 117 044501  
+[88] Pfeiffer C and Grbic A 2014 Bianisotropic metasurfaces for optimal polarization control: analysis and synthesis Physical Review Applied 2 044011  
+[89] Pfeiffer C, Zhang C, Ray V, Guo L J and Grbic A 2014 High performance bianisotropic metasurfaces: asymmetric transmission of light Physical Review Letters 113 023902  
+[90] Chen H Y, Wang J F, Ma H, Qu S B, Xu Z, Zhang A X, Yan M B and Li Y F 2014 Ultra-wideband polarization conversion metasurfaces based on multiple plasmon resonances Journal of Applied Physics 115 154504  
+[91] Dai Y M, Ren W Z, Cai H B, Ding H Y, Pan N and Wang X P 2014 Realizing full visible spectrum metamaterial half-wave plates with patterned metal nanoarray/insulator/metal film structure Optics Express 22 7465–7472  
+[92] Hao J, Ren Q, An Z, Huang X, Chen Z, Qiu M and Zhou L 2009 Optical metamaterial for polarization control Physical Review A 80(2) 023807  
+[93] Yang Y M, Wang W Y, Moitra P, Kravchenko I I, Briggs D P and Valentine J 2014 Dielectric meta-reflectarray for broadband linear polarization conversion and optical vortex generation Nano Letters 14 1394–1399  
+[94] Chiang Y J and Yen T J 2013 A composite-metamaterial-based terahertz-wave polarization rotator with an ultrathin thickness, an excellent conversion ratio, and enhanced transmission Applied Physics Letters 102011129  
+[95] Cong L Q, Cao W, Zhang X Q, Tian Z, Gu J Q, Singh R, Han J G and Zhang W L 2013 A perfect metamaterial polarization rotator Applied Physics Letters 103 171107  
+[96] Ye Y Q and He S 2010 90° polarization rotator using a bilayered chiral metamaterial with giant optical activity Applied Physics Letters 96 203501  
+[97] Mutlu M and Ozbay E 2012 A transparent 90° polarization rotator by combining chirality and electromagnetic wave tunneling Applied Physics Letters 100 051909  
+[98] Shi H Y, Zhang A X, Zheng S, Li J X and Jiang Y S 2014 Dual-band polarization angle independent 90° polarization rotator using twisted electric-field-coupled resonators Applied Physics Letters 104 034102  
+[99] Li Y F, Zhang J Q, Qu S B, Wang J F, Zheng L,  
+Zhang A X and Xu Z 2014 Ultra-broadband linearly polarisation manipulation metamaterial Electronics Letters 50 1658–1659  
+[100] Liu D j, Xiao Z y, Ma X l and Wang Z h 2015 Broadband asymmetric transmission and multi-band 90° polarization rotator of linearly polarized wave based on multi-layered metamaterial Optics Communications 354 272–276  
+[101] Fedotov V A, Mladyonov P L, Prosvirnin S L, Rogacheva A V, Chen Y and Zheludev N I 2006 Asymmetric propagation of electromagnetic waves through a planar chiral structure Physical Review Letters 97 167401  
+[102] Schwanecke A S, Fedotov V A, Khardikov V V, Prosvirnin S L, Chen Y and Zheludev N I 2008 Nanostructured metal film with asymmetric optical transmission Nano Letters 8 2940–2943  
+[103] Fedotov V A, Schwanecke A S, Zheludev N I, Khardikov V V and Prosvirnin S L 2007 Asymmetric transmission of light and enantiomerically sensitive plasmon resonance in planar chiral nanostructures Nano Letters 7 1996–1999  
+[104] Drezet A, Genet C, Laluet J Y and Ebbesen T W 2008 Optical chirality without optical activity: how surface plasmons give a twist tolight Optics Express 16 12559–12570  
+[105] Menzel C, Helgert C, Rockstuhl C, Kley E B, Tünnermann A, Pertsch T and Lederer F 2010 Asymmetric transmission of linearly polarized light at optical metamaterials Physical Review Letters 104 253902  
+[106] Huang C, Feng Y, Zhao J, Wang Z and Jiang T 2012 Asymmetric electromagnetic wave transmission of linear polarization via polarization conversion through chiral metamaterial structures Physical Review B 85 195131  
+[107] Li Z, Chen S, Tang C, Liu W, Cheng H, Liu Z, Li J, Yu P, Xie B, Liu Z, Li J and Tian J 2014 Broadband diodelike asymmetric transmission of linearly polarized light in ultrathin hybrid metamaterial Applied Physics Letters 105 201103  
+[108] Li Z, Chen S, Liu W, Cheng H, Liu Z, Li J, Yu P, Xie B and Tian J 2015 High performance broadband asymmetric polarization conversion due to polarization-dependent reflection Plasmonics 10 1703–1711  
+[109] Han J, Li H, Fan Y, Wei Z, Wu C, Cao Y, Yu X, Li F and Wang Z 2011 An ultrathin twist-structure polarization transformer based on fish-scale metallic wires Applied Physics Letters 98 151908  
+[110] Shi J H, Ma H F, Guan C Y, Wang Z P and Cui T J 2014 Broadband chirality and asymmetric transmission in ultrathin 90°-twisted babinet-inverted metasurfaces Physical Review B 89 165128  
+[111] Mutlu M, Akosman A E, Serebryannikov A E and Ozbay E 2012 Diodelike asymmetric transmission of linearly polarized waves using magnetoelectric coupling and electromagnetic wave tunneling Physical Review Letters 108 213905  
+[112] Richtmyer R D 1939 Dielectric resonators Journal of Applied Physics 10 391–398  
+[113] Long S A, McAllister M and Liang S 1983 The resonant cylindrical dielectric cavity antenna IEEE Transactions on Antennas and Propagation 31 406–412  
+[114] Mongia R K and Bhartia P 1994 Dielectric resonator antennas – a review and general design relations for resonant frequency and bandwidth International Journal of Microwave and Millimeter-Wave Computer-Aided Engineering 4 230–247  
+[115] Petosa A and Ittipiboon A 2010 Dielectric resonator antennas: a historical review and the current state of the art IEEE Antennas and Propagation Magazine 52 91–116  
+[116] Wheeler M S, Aitchison J S and Mojahedi M 2005 Three-dimensional array of dielectric spheres with an isotropic negative permeability at infrared frequencies Physical Review B 72 193103  
+[117] Ahmadi A and Mosallaei H 2008 Physical configuration and performance modeling of all-dielectric metamaterials Physical Review B 77 045104  
+[118] Evlyukhin A B, Reinhardt C, Seidel A, Luk'yanchuk B S and Chichkov B N 2010 Optical response features of Si-nanoparticle arrays Physical Review B 82 045404  
+[119] Evlyukhin A B, Reinhardt C and Chichkov B N 2011 Multipole light scattering by nonspherical nanoparticles in the discrete dipole approximation Physical Review B 84 235429  
+[120] Kuznetsov A I, Miroshnichenko A E, Fu Y H, Zhang J and Luk'yanchuk B 2012 Magnetic light Scientific Reports 2 492  
+[121] Zhao Q, Kang L, Du B, Zhao H, Xie Q, Huang X, Li B, Zhou J and Li L 2008 Experimental demonstration of isotropic negative permeability in a three-dimensional dielectric composite Physical Review Letters 101 027402  
+[122] Vynck K, Felbacq D, Centeno E, Căbuz A I, Cassagne D and Guizal B 2009 All-dielectric rod-type metamaterials at optical frequencies Physical Review Letters 102 133901  
+[123] O'Brien S and Pendry J B 2002 Photonic band-gap effects and magnetic activity in dielectric composites Journal of Physics: Condensed Matter 14 4035  
+[124] Zhao Q, Zhou J, Zhang F and Lippens D 2009 Mie resonance-based dielectric metamaterials Materials Today 12 60–69  
+[125] Peng L, Ran L, Chen H, Zhang H, Kong J A and Grzegorczyk T M 2007 Experimental observation of left-handed behavior in an array of standard dielectric resonators Physical Review Letters 98 157403  
+[126] Ginn J C, Brener I, Peters D W, Wendt J R, Stevens J O, Hines P F, Basilio L I, Warne L K, Ihlefeld J F, Clem P G and Sinclair M B 2012 Realizing optical magnetism from dielectric metamaterials Physical Review Letters 108 097402  
+[127] Schuller J A, Zia R, Taubner T and Brongersma M L 2007 Dielectric metamaterials based on electric and magnetic resonances of silicon carbide particles Physical Review Letters 99 107401  
+[128] Schuller J A, Taubner T and Brongersma M L 2009 Optical antenna thermal emitters Nature Photonics 3 658–661  
+[129] Staude I, Miroshnichenko A E, Decker M, Fofang N T, Liu S, Gonzales E, Dominguez J, Luk T S, Neshev D N, Brener I and Kivshar Y 2013 Tailoring directional scattering through magnetic and electric resonances in subwavelength silicon nanodisks ACS Nano 7 7824–7832  
+[130] Evlyukhin A B, Novikov S M, Zywietz U, Eriksen R L, Reinhardt C, Bozhevolnyi S I and Chichkov B N 2012 Demonstration of magnetic dipole resonances of dielectric nanospheres in the visible region Nano Letters 12 3749–3755  
+[131] Cheng J, Ansari-Oghol-Beig D and Mosallaei H 2014 Wave manipulation with designer dielectric metasurfaces Optics Letters 39 6285–6288  
+[132] Decker M, Staude I, Falkner M, Dominguez J, Neshev D N, Brener I, Pertsch T and Kivshar Y S 2015 High-efficiency dielectric Huygens' surfaces Advanced Optical Materials 3 813–820  
+[133] Yang Y, Kravchenko I I, Briggs D P and Valentine J 2014 All-dielectric metasurface analogue of electromagnetically induced transparency Nature Communications 5 5753  
+[134] Kerker M, Wang D S and Giles C L 1983 Electromagnetic  
+scattering by magnetic spheres Journal of the Optical Society of America 73 765–767  
+[135] Geffrin J M, García-Cámara B, Gómez-Medina R, Albella P, Froufe-Pérez L S, Eyraud C, Litman A, Vaillon R, González F, Nieto-Vesperinas M, Sáenz J J and Moreno F 2012 Magnetic and electric coherence in forward- and back-scattered electromagnetic waves by a single dielectric subwavelength sphere Nature Communications 3 1171  
+[136] Fu Y H, Kuznetsov A I, Miroshnichenko A E, Yu Y F and Luk'yanchuk B 2013 Directional visible light scattering by silicon nanoparticles Nature Communications 4 1527  
+[137] Person S, Jain M, Lapin Z, Sáenz J J, Wicks G and Novotny L 2013 Demonstration of zero optical backscattering from single nanoparticles Nano Letters 13 1806–1809  
+[138] Slovick B, Yu Z G, Berding M and Krishnamurthy S 2013 Perfect dielectric-metamaterial reflector Physical Review B 88 165116  
+[139] Moitra P, Slovick B A, Gang Yu Z, Krishnamurthy S and Valentine J 2014 Experimental demonstration of a broadband all-dielectric metamaterial perfect reflector Applied Physics Letters 104 171102  
+[140] Moitra P, Slovick B A, Li W, Kravchencko I I, Briggs D P, Krishnamurthy S and Valentine J 2015 Large-scale all-dielectric metamaterial perfect reflectors ACS Photonics 2 692–698  
+[141] Liu S, Sinclair M B, Mahony T S, Jun Y C, Campione S, Ginn J, Bender D A, Wendt J R, Ihlefeld J F, Clem P G, Wright J B and Brener I 2014 Optical magnetic mirrors without metals Optica 1 250–256  
+[142] Headland D, Nirantar S, Withayachumnankul W, Gutruf P, Abbott D, Bhaskaran M, Fumeaux C and Sriram S 2015 Terahertz magnetic mirror realized with dielectric resonator antennas Advanced Materials 27 7137–7144  
+[143] Sautter J, Staude I, Decker M, Rusak E, Neshev D N, Brener I and Kivshar Y S 2015 Active tuning of all-dielectric metasurfaces ACS Nano 9 4308–4315  
+[144] Iyer P P, Butakov N A and Schuller J A 2015 Reconfigurable semiconductor phased-array metasurfaces ACS Photonics 2 1077–1084  
+[145] Liu X, Zhao Q, Lan C and Zhou J 2013 Isotropic Mie resonance-based metamaterial perfect absorber Applied Physics Letters 103 031910  
+[146] Zou C, Withayachumnankul W, Shadrivov I V, Kivshar Y S and Fumeaux C 2015 Directional excitation of surface plasmons by dielectric resonators Physical Review B 91 085433  
+[147] Chong K E, Staude I, James A, Dominguez J, Liu S, Campione S, Subramania G S, Luk T S, Decker M, Neshev D N, Brener I and Kivshar Y S 2015 Polarization-independent silicon metadevices for efficient optical wavefront control Nano Letters 15 5369–5374  
+[148] Arbabi A, Horie Y, Ball A J, Bagheri M and Faraon A 2015 Subwavelength-thick lenses with high numerical apertures and large efficiency based on high-contrast transmitarrays Nature Communications 6 7069  
+[149] Aieta F, Kats M A, Genevet P and Capasso F 2015 Multiwavelength achromatic metasurfaces by dispersive phase compensation Science 347 1342–1345  
+[150] Lin D M, Fan P Y, Hasman E and Brongersma M L 2014 Dielectric gradient metasurface optical elements Science 345 298–302  
+[151] Arbabi A, Horie Y, Bagheri M and Faraon A 2015 Dielectric metasurfaces for complete control of phase and polarization with subwavelength spatial resolution and high transmission Nature Nanotechnology 10 937-943  
+[152] Fong B, Colburn J, Ottusch J, Visher J and Sievenpiper  
+D 2010 Scalar and tensor holographic artificial impedance surfaces IEEE Transactions on Antennas and Propagation 58 3212–3221  
+[153] Maci S, Minatti G, Casaletti M and Bosiljevac M 2011 Metasurfing: addressing waves on impenetrable metasurfaces IEEE Antennas and Wireless Propagation Letters 10 1499–1502  
+[154] Minatti G, Caminita F, Casaletti M and Maci S 2011 Spiral leaky-wave antennas based on modulated surface impedance IEEE Transactions on Antennas and Propagation 59 4436–4444  
+[155] Podilchak S, Matekovits L, Freundorfer A, Antar Y and Orefice M 2013 Controlled leaky-wave radiation from a planar configuration of width-modulated microstrip lines IEEE Transactions on Antennas and Propagation 61 4957–4972  
+[156] Genevet P, Lin J, Kats M A and Capasso F 2012 Holographic detection of the orbital angular momentum of light with plasmonic photodiodes Nature Communications 3 1278  
+[157] Qu C, Xiao S, Sun S, He Q and Zhou L 2013 A theoretical study on the conversion efficiencies of gradient meta-surfaces Europhysics Letters 101 54002  
+[158] Sun W, He Q, Sun S and Zhou L 2016 High-efficiency surface plasmon meta-couplers: concept and microwave-regime realizations Light Science & Applications 5 e16003  
+[159] Vakil A and Engheta N 2011 Transformation optics using graphene Science 332 1291–1294  
+[160] Gok G and Grbic A 2013 Tailoring the phase and power flow of electromagnetic fields Physical Review Letters 111(23) 233904  
+[161] Yu N 2014 Controlling light propagation in optical waveguides using one dimensional phased antenna arrays Conference on Lasers and Electro-Optics (CLEO) (San Jose, CA)  
+[162] Li Z, Kim M H and Yu N 2015 Controlling guided waves in telecom waveguides using one dimensional phased antenna arrays Conference on Lasers and Electro-Optics (CLEO) (San Jose, CA)  
+[163] Chen H T, O'Hara J F, Azad A K, Taylor A J, Averitt R D, Shrekenhamer D B and Padilla W J 2008 Experimental demonstration of frequency-agile terahertz metamaterials Nature Photonics 2 295–298  
+[164] Heyes J E, Withayachumnankul W, Grady N K, Chowdhury D R, Azad A K and Chen H T 2014 Hybrid metasurface for ultra-broadband terahertz modulation Applied Physics Letters 105 181108  
+[165] Seren H R, Keiser G R, Cao L, Zhang J, Strikwerda A C, Fan K, Metcalfe G D, Wraback M, Zhang X and Averitt R D 2014 Optically modulated multiband terahertz perfect absorber Advanced Optical Materials 2 1221–1226  
+[166] Shadrivov I V, Morrison S K and Kivshar Y S 2006 Tunable split-ring resonators for nonlinear negative-index metamaterials Optics Express 14 9344–9349  
+[167] Zhu B O, Zhao J and Feng Y 2013 Active impedance metasurface with full 360° reflection phase tuning Scientific Reports 3 3059  
+[168] Padilla W J, Taylor A J, Highstrete C, Lee M and Averitt R D 2006 Dynamical electric and magnetic metamaterial response at terahertz frequencies Physical Review Letters 96 107401  
+[169] Chen H T, Padilla W J, Zide J M O, Bank S R, Gossard A C, Taylor A J and Averitt R D 2007 Ultrafast optical switching of terahertz metamaterials fabricated on ErAs/GaAs nanoisland superlattices Optics Letters 32 1620–1622  
+[170] Shen N H, Massaouti M, Gokkavas M, Manceau J M, Ozbay E, Kafesaki M, Koschny T, Tzortzakis S and  
+Soukoulis C M 2011 Optically implemented broadband blueshift switch in the terahertz regime Physical Review Letters 106(3) 037403  
+[171] Zhang S, Zhou J, Park Y S, Rho J, Singh R, Nam S, Azad A K, Chen H T, Yin X, Taylor A J and Zhang X 2012 Photoinduced handedness switching in terahertz chiral metamolecules Nature Communications 3 942  
+[172] Zhou J, Chowdhury D R, Zhao R, Azad A K, Chen H T, Soukoulis C M, Taylor A J and O'Hara J F 2012 Terahertz chiral metamaterials with giant and dynamically tunable optical activity Physical Review B 86(3) 035448  
+[173] Gu J, Singh R, Liu X, Zhang X, Ma Y, Zhang S, Maier S A, Tian Z, Azad A K, Chen H T, Taylor A J, Han J and Zhang W 2012 Active control of electromagnetically induced transparency analogue in terahertz metamaterials Nature Communications 3 1151  
+[174] Chen H T, Padilla W J, Zide J M O, Gossard A C, Taylor A J and Averitt R D 2006 Active terahertz metamaterial devices Nature 444 597–600  
+[175] Chen H T, Padilla W J, Cich M J, Azad A K, Averitt R D and Taylor A J 2009 A metamaterial solid-state terahertz phase modulator Nature Photonics 3 148–151  
+[176] Chen H T, Palit S, Tyler T, Bingham C M, Zide J M O, O'Hara J F, Smith D R, Gossard A C, Averitt R D, Padilla W J, Jokerst N M and Taylor A J 2008 Hybrid metamaterials enable fast electrical modulation of freely propagating terahertz waves Applied Physics Letters 93 091117  
+[177] Shrekenhamer D, Rout S, Strikwerda A C, Bingham C, Averitt R D, Sonkusale S and Padilla W J 2011 High speed terahertz modulation from metamaterials with embedded high electron mobility transistors Optics Express 19 9968–9975  
+[178] Shrekenhamer D, Montoya J, Krishna S and Padilla W J 2013 Four-color metamaterial absorber THz spatial light modulator Advanced Optical Materials 1 905–909  
+[179] Zhang Y, Qiao S, Liang S, Wu Z, Yang Z, Feng Z, Sun H, Zhou Y, Sun L, Chen Z, Zou X, Zhang B, Hu J, Li S, Chen Q, Li L, Xu G, Zhao Y and Liu S 2015 Gbps terahertz external modulator based on a composite metamaterial with a double-channel heterostructure Nano Letters 15 3501–3506  
+[180] Karl N, Reichel K, Chen H T, Taylor A J, Brener I, Benz A, Reno J L, Mendis R and Mittleman D M 2014 An electrically driven terahertz metamaterial diffractive modulator with more than 20 dB of dynamic range Applied Physics Letters 104 091115  
+[181] Chan W L, Chen H T, Taylor A J, Brener I, Cich M J and Mittleman D M 2009 A spatial light modulator for terahertz beams Applied Physics Letters 94 213511  
+[182] Watts C M, Shrekenhamer D, Montoya J, Lipworth G, Hunt J, Sleasman T, Krishna S, Smith D R and Padilla W J 2014 Terahertz compressive imaging with metamaterial spatial light modulators Nature Photonics 8 605–609  
+[183] Yao Y, Shankar R, Kats M A, Song Y, Kong J, Loncar M and Capasso F 2014 Electrically tunable metasurface perfect absorbers for ultrathin mid-infrared optical modulators Nano Letters 14 6526–6532  
+[184] Dabidian N, Kholmanov I, Khanikaev A B, Tatar K, Trendafilov S, Mousavi S H, Magnuson C, Ruoff R S and Shvets G 2015 Electrical switching of infrared light using graphene integration with plasmonic Fano resonant metasurfaces ACS Photonics 2 216–227  
+[185] Jang M S, Brar V W, Sherrott M C, Lopez J J, Kim L, Kim S, Choi M and Atwater H A 2014 Tunable large resonant absorption in a midinfrared graphene Salisbury screen Physical Review B 90(16) 165409  
+[186] Fan K, Zhao X, Zhang J, Geng K, Keiser G, Seren H, Metcalfe G, Wraback M, Zhang X and Averitt R 2013 Optically tunable terahertz metamaterials on highly flexible substrates IEEE Transactions on Terahertz Science and Technology 3 702–708  
+[187] Emani N K, Kildishev A V, Shalaev V M and Boltasseva A 2015 Graphene: a dynamic platform for electrical control of plasmonic resonance Nanophotonics 4 214–223  
+[188] Sensale-Rodriguez B, Yan R, Kelly M M, Fang T, Tahy K, Hwang W S, Jena D, Liu L and Xing H G 2012 Broadband graphene terahertz modulators enabled by intraband transitions Nature Communications 3 780  
+[189] Ju L, Geng B, Horng J, Girit C, Martin M, Hao Z, Bechtel H A, Liang X, Zettl A, Shen Y R and Wang F 2011 Graphene plasmonics for tunable terahertz metamaterials Nature Nanotechnology 6 630–634  
+[190] García de Abajo F J 2014 Graphene plasmonics: challenges and opportunities ACS Photonics 1 135–152  
+[191] Lee S H, Choi M, Kim T T, Lee S, Liu M, Yin X, Choi H K, Lee S S, Choi C G, Choi S Y, Zhang X and Min B 2012 Switching terahertz waves with gate-controlled active graphene metamaterials Nature Materials 11 936–941  
+[192] Gao W, Shu J, Reichel K, Nickel D V, He X, Shi G, Vajtai R, Ajayan P M, Kono J, Mittleman D M and Xu Q 2014 High-contrast terahertz wave modulation by gated graphene enhanced by extraordinary transmission through ring apertures Nano Letters 14 1242–1248  
+[193] Miao Z, Wu Q, Li X, He Q, Ding K, An Z, Zhang Y and Zhou L 2015 Widely tunable terahertz phase modulation with gate-controlled graphene metasurfaces Physical Review X 5(4) 041027  
+[194] Yao Y, Kats M A, Genevet P, Yu N, Song Y, Kong J and Capasso F 2013 Broad electrical tuning of graphene-loaded plasmonic antennas Nano Letters 13 1257–1264  
+[195] Yao Y, Kats M A, Shankar R, Song Y, Kong J, Loncar M and Capasso F 2014 Wide wavelength tuning of optical antennas on graphene with nanosecond response time Nano Letters 14 214–219  
+[196] Dabidian N, Dutta-Gupta S, Kholmanov I, Lu F, Lee J, Lai K, Jin M, Fallahazad B, Tutuc E, Belkin M A and Shvets G 2015 Experimental demonstration of phase modulation and motion sensing using graphene-integrated metasurfaces arXiv:1510.04260  
+[197] Mousavi S H, Kholmanov I, Alici K B, Purtseladze D, Arju N, Tatar K, Fozdar D Y, Suk J W, Hao Y, Khanikaev A B, Ruoff R S and Shvets G 2013 Inductive tuning of Fano-resonant metasurfaces using plasmonic response of graphene in the mid-infrared Nano Letters 13 1111–1117  
+[198] Goldflam M D, Liu M K, Chapler B C, Stinson H T, Sternbach A J, McLeod A S, Zhang J D, Geng K, Royal M, Kim B J, Averitt R D, Jokerst N M, Smith D R, Kim H T and Basov D N 2014 Voltage switching of a $VO_{2}$ memory metasurface using ionic gel Applied Physics Letters 105 041117  
+[199] Singh R, Azad A K, Jia Q X, Taylor A J and Chen H T 2011 Thermal tunability in terahertz metamaterials fabricated on strontium titanate single-crystal substrates Optics Letters 36 1230–1232  
+[200] Driscoll T, Palit S, Qazilbash M M, Brehm M, Keilmann F, Chae B G, Yun S J, Kim H T, Cho S Y, Jokerst N M, Smith D R and Basov D N 2008 Dynamic tuning of an infrared hybrid-metamaterial resonance using vanadium dioxide Applied Physics Letters 93 024101  
+[201] Driscoll T, Kim H T, Chae B G, Kim B J, Lee Y W, Jokerst N M, Palit S, Smith D R, Di Ventra M and Basov D N 2009 Memory metamaterials Science 325 1518–1521  
+[202] Dicken M J, Aydin K, Pryce I M, Sweatlock L A, Boyd E M, Walavalkar S, Ma J and Atwater H A 2009  
+Frequency tunable near-infrared metamaterials based on $VO_{2}$ phase transition Optics Express 17 18330–18339  
+[203] Wen Q Y, Zhang H W, Yang Q H, Xie Y S, Chen K and Liu Y L 2010 Terahertz metamaterials with $VO_{2}$ cutwires for thermal tunability Applied Physics Letters 97 021111  
+[204] Goldflam M D, Driscoll T, Chapler B, Khatib O, Marie Jokerst N, Palit S, Smith D R, Kim B J, Seo G, Kim H T, Ventra M D and Basov D N 2011 Reconfigurable gradient index using $VO_{2}$ memory metamaterials Applied Physics Letters 99 044103  
+[205] Kats M A, Blanchard R, Genevet P, Yang Z, Qazilbash M M, Basov D N, Ramanathan S and Capasso F 2013 Thermal tuning of mid-infrared plasmonic antenna arrays using a phase change material Optics Letters 38 368–370  
+[206] Zhao Q, Kang L, Du B, Li B, Zhou J, Tang H, Liang X and Zhang B 2007 Electrically tunable negative permeability metamaterials based on nematic liquid crystals Applied Physics Letters 90 011112  
+[207] Shrekenhamer D, Chen W C and Padilla W J 2013 Liquid crystal tunable metamaterial absorber Physical Review Letters 110 177403  
+[208] Chen H T, Yang H, Singh R, O'Hara J F, Azad A K, Trugman S A, Jia Q X and Taylor A J 2010 Tuning the resonance in high-temperature superconducting terahertz metamaterials Physical Review Letters 105 247402  
+[209] Gu J, Singh R, Tian Z, Cao W, Xing Q, He M, Zhang J W, Han J, Chen H T and Zhang W 2010 Terahertz superconductor metamaterial Applied Physics Letters 97 071102  
+[210] Wu J, Jin B, Xue Y, Zhang C, Dai H, Zhang L, Cao C, Kang L, Xu W, Chen J and Wu P 2011 Tuning of superconducting niobium nitride terahertz metamaterials Optics Express 19 12021–12026  
+[211] Kurter C, Tassin P, Zhang L, Koschny T, Zhuravel A P, Ustinov A V, Anlage S M and Soukoulis C M 2011 Classical analogue of electromagnetically induced transparency with a metal-superconductor hybrid metamaterial Physical Review Letters 107(4) 043901  
+[212] Singh R, Xiong J, Azad A K, Yang H, Trugman S A, Jia Q X, Taylor A J and Chen H T 2012 Optical tuning and ultrafast dynamics of high-temperature superconducting terahertz metamaterials Nanophotonics 1 117–123  
+[213] Tao H, Strikwerda A C, Fan K, Padilla W J, Zhang X and Averitt R D 2009 Reconfigurable terahertz metamaterials Physical Review Letters 103(14) 147401  
+[214] Zhu W M, Liu A Q, Zhang X M, Tsai D P, Bourouina T, Teng J H, Zhang X H, Guo H C, Tanoto H, Mei T, Lo G Q and Kwong D L 2011 Switchable magnetic metamaterials using micromachining processes Advanced Materials 23 1792–1796  
+[215] Ma F, Lin Y S, Zhang X and Lee C 2014 Tunable multiband terahertz metamaterials using a reconfigurable electric split-ring resonator array Light Science & Applications 3 e171  
+[216] Han Z, Kohno K, Fujita H, Hirakawa K and Toshiyoshi H 2014 MEMS reconfigurable metamaterial for terahertz switchable filter and modulator Optics Express 22 21326–21339  
+[217] Kan T, Isozaki A, Kanda N, Nemoto N, Konishi K, Takahashi H, Kuwata-Gonokami M, Matsumoto K and Shimoyama I 2015 Enantiomeric switching of chiral metamaterial for terahertz polarization modulation employing vertically deformable MEMS spirals Nature Communications 6  
+[218] Liu M, Hwang H Y, Tao H, Strikwerda A C, Fan K, Keiser G R, Sternbach A J, West K G, Kittiwatanakul S, Lu J, Wolf S A, Omenetto F G, Zhang X, Nelson K A and Averitt R D 2012 Terahertz-field-induced insulator-to-metal transition in vanadium dioxide metamaterial Nature 487 345–348  
+[219] Fan K, Hwang H Y, Liu M, Strikwerda A C, Sternbach A, Zhang J, Zhao X, Zhang X, Nelson K A and Averitt R D 2013 Nonlinear terahertz metamaterials via field-enhanced carrier dynamics in GaAs Physical Review Letters 110(21) 217404  
+[220] Seren H R, Zhang J, Keiser G R, Maddox S J, Zhao X, abd Seth R Bank K F, Zhang X and Averitt R D 2015 Nonlinear terahertz devices utilizing semiconducting plasmonic metamaterials arXiv:1508.03183  
+[221] Grady N K, Jr B G P, Hwang H Y, Brandt N C, Torchinsky D, Singh R, Yan L, Trugman D, Trugman S A, Jia Q X, Taylor A J, Nelson K A and Chen H T 2013 Nonlinear high-temperature superconducting terahertz metamaterials New Journal of Physics 15 105016  
+[222] Zhang C, Jin B, Han J, Kawayama I, Murakami H, Wu J, Kang L, Chen J, Wu P and Tonouchi M 2013 Terahertz nonlinear superconducting metamaterials Applied Physics Letters 102 081121  
+[223] Lee J, Tymchenko M, Argyropoulos C, Chen P Y, Lu F, Demmerle F, Boehm G, Amann M C, Alù A and Belkin M A 2014 Giant nonlinear response from plasmonic metasurfaces coupled to intersubband transitions Nature 511 65–69  
+[224] Campione S, Benz A, Sinclair M B, Capolino F and Brener I 2014 Second harmonic generation from metamaterials strongly coupled to intersubband transitions in quantum wells Applied Physics Letters 104 131104  
+[225] Ahn D and Chuang S L 1987 Calculation of linear and nonlinear intersubband optical absorptions in a quantum well model with an applied electric field IEEE Journal of Quantum Electronics 23 2196–2204  
+[226] Capasso F, Sirtori C and Cho A Y 1994 Coupled quantum well semiconductors with giant electric field tunable nonlinear optical properties in the infrared IEEE Journal of Quantum Electronics 30 1313–1326  
+[227] Gmachl C, Belyanin A, Sivco D L, Peabody M L, Owschimikow N, Sergent A, Capasso F and Cho A 2003 Optimized second-harmonic generation in quantum cascade lasers IEEE Journal of Quantum Electronics 39 1345–1355  
+[228] Helm M 2000 Intersubband Transitions in Quantum Wells: Physics and Device Applications (Semiconductors and Semimetals vol 62) (Academic Press) chap The Basic Physics of Intersubband Transitions  
+[229] Powell D A, Shadrivov I V, Kivshar Y S and Gorkunov M V 2007 Self-tuning mechanisms of nonlinear splitting resonators Applied Physics Letters 91 144107  
+[230] Wang B, Zhou J, Koschny T and Soukoulis C M 2008 Nonlinear properties of split-ring resonators Optics Express 16 16058–16063  
+[231] Huang D, Poutrina E and Smith D R 2010 Analysis of the power dependent tuning of a varactor-loaded metamaterial at microwave frequencies Applied Physics Letters 96 104104  
+[232] Shadrivov I V, Kozyrev A B, van der Weide D W and Kivshar Y S 2008 Tunable transmission and harmonic generation in nonlinear metamaterials Applied Physics Letters 93 161903  
+[233] Rose A, Huang D and Smith D R 2011 Controlling the second harmonic in a phase-matched negative-index metamaterial Physical Review Letters 107(6) 063902  
+[234] Klein M W, Enkrich C, Wegener M and Linden S 2006 Second-harmonic generation from magnetic  
+metamaterials Science 313 502–504  
+[235] Klein M W, Wegener M, Feth N and Linden S 2007 Experiments on second- and third-harmonic generation from magnetic metamaterials Opt. Express 15 5238-5247  
+[236] Ciraci C, Poutrina E, Scalora M and Smith D R 2012 Origin of second-harmonic generation enhancement in optical split-ring resonators Phys. Rev. B 85(20) 201403  
+[237] Luo L, Chatzakis I, Wang J, Niesler F B P, Wegener M, Koschny T and Soukoulis C M 2014 Broadband terahertz generation from metamaterials Nature Communications 5 3055  
+[238] O'Brien K, Suchowski H, Rho J, Salandrino A, Kante B, Yin X and Zhang X 2015 Predicting nonlinear properties of metamaterials from the linear response Nature Materials 14 379–383  
+[239] Wolf O, Campione S, Benz A, Ravikumar A P, Liu S, Luk T S, Kadlec E A, Shaner E A, Klem J F, Sinclair M B and Brener I 2015 Phased-array sources based on nonlinear metamaterial nanocavities Nature Communications 6 7667  
+[240] Segal N, Keren-Zur S, Hendler N and Ellenbogen T 2015 Controlling light with metamaterial-based nonlinear photonic crystals Nature Photonics 9 180–184  
+[241] Zhang B, Hendrickson J, Nader N, Chen H T and Guo J 2014 Metasurface optical antireflection coating Applied Physics Letters 105 241113  
+[242] Yin X, Ye Z, Rho J, Wang Y and Zhang X 2013 Photonic spin Hall effect at metasurfaces Science 339 1405–1407  
+[243] Ni X, Wong Z J, Mrejen M, Wang Y and Zhang X 2015 An ultrathin invisibility skin cloak for visible light Science 349 1310–1314  
+[244] Rephaeli E, Raman A and Fan S 2013 Ultrabroadband photonic structures to achieve high-performance daytime radiative cooling Nano Letters 13 1457–1461  
+[245] Zhu L, Raman A, Wang K X, Anoma M A and Fan S 2014 Radiative cooling of solar cells Optica 1 32–38  
+[246] Raman A P, Anoma M A, Zhu L, Rephaeli E and Fan S 2014 Passive radiative cooling below ambient air temperature under direct sunlight Nature 515 540–544  
+[247] Tong J K, Huang X, Boriskina S V, Loomis J, Xu Y and Chen G 2015 Infrared-transparent visible-opaque fabrics for wearable personal thermal management ACS Photonics 2 769–778  
+[248] Shi N N, Tsai C C, Camino F, Bernard G D, Yu N and Wehner R 2015 Keeping cool: enhanced optical reflection and radiative heat dissipation in Saharan silver ants Science 349 298–301  
+[249] Naik G V, Kim J and Boltasseva A 2011 Oxides and nitrides as alternative plasmonic materials in the optical range Optical Materials Express 1 1090–1099  
+[250] Boltasseva A and Atwater H A 2011 Low-loss plasmonic metamaterials Science 331 290–291  
+[251] Guler U, Boltasseva A and Shalaev V M 2014 Refractory plasmonics Science 344 263–264  
+[252] Yi F, Shim E, Zhu A Y, Zhu H, Reed J C and Cubukcu E 2013 Voltage tuning of plasmonic absorbers by indium tin oxide Applied Physics Letters 102 221102  
+[253] Park J, Kang J H, Liu X and Brongersma M L 2015 Electrically tunable epsilon-near-zero (ENZ) metafilm absorbers Scientific Reports 5 15754  
+[254] Hudgens S and Johnson B 2004 Overview of phase-change chalcogenide nonvolatile memory technology MRS Bulletin 29 829–832  
+[255] Wuttig M and Yamada N 2007 Phase-change materials for rewriteable data storage Nature Materials 6 824–832  
+[256] Gholipour B, Zhang J, MacDonald K F, Hewak D W and Zheludev N I 2013 An all-optical, non-volatile, bidirectional, phase-change meta-switch Advanced Materials  
+25 3050–3054  
+[257] Hosseini P, Wright C D and Bhaskaran H 2014 An optoelectronic framework enabled by low-dimensional phase-change films Nature 511 206–211  
+[258] Shi J, Zhou Y and Ramanathan S 2014 Colossal resistance switching and band gap modulation in a perovskite nickelate by electron doping Nature Communications 5 4860
